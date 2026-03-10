@@ -1,0 +1,15 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: csi-forca-controller
+  namespace: csi-forca-system
+  labels:
+    app: csi-forca
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/component: controller
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: csi-forca
+      app.kubernetes.io/component: controller

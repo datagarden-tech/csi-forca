@@ -1,0 +1,25 @@
+# Metrics Service for CSI Forca Controller
+#
+# Exposes Prometheus metrics from the controller deployment.
+# This Service provides a stable endpoint for metrics scraping.
+# Scrape this endpoint with Prometheus to collect CSI controller metrics.
+apiVersion: v1
+kind: Service
+metadata:
+  name: csi-forca-controller-metrics
+  namespace: csi-forca-system
+  labels:
+    app: csi-forca
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/component: controller-metrics
+spec:
+  type: ClusterIP
+  selector:
+    app: csi-forca
+    app.kubernetes.io/component: controller
+  ports:
+    - name: metrics
+      port: 8081
+      targetPort: 8081
+      protocol: TCP
+      

@@ -1,0 +1,32 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: csi-forca-system
+
+resources:
+  - namespace.yaml
+  - csidriver.yaml
+  - rbac/controller-rbac.yaml
+  - rbac/node-rbac.yaml
+  - controller/deployment.yaml
+  - controller/pdb.yaml
+  - controller/metrics-service.yaml
+  - node/daemonset.yaml
+  - node/metrics-service.yaml
+
+# Image tag management (updated by CI or manual overlays)
+images:
+  - name: ghcr.io/datagarden-tech/csi-forca-controller
+    newTag: 1.0.0-rc1
+  - name: ghcr.io/datagarden-tech/csi-forca-node
+    newTag: 1.0.0-rc1
+
+# Labels applied to all resources (v5 transformer)
+# Product name: csi-forca (no "dg-" prefix per naming policy)
+labels:
+  - pairs:
+      app.kubernetes.io/name: csi-forca
+      app.kubernetes.io/managed-by: kustomize
+      app.kubernetes.io/part-of: csi-forca
+    includeSelectors: true
+    includeTemplates: true

@@ -1,0 +1,652 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kubernetes.io/component: system
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-controller
+  namespace: csi-forca-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/component: node
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-node
+  namespace: csi-forca-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-controller
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumes
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - delete
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims/status
+  verbs:
+  - patch
+  - update
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - storageclasses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - storage.k8s.io
+  resources:
+  - csinodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - watch
+  - list
+  - delete
+  - update
+  - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/component: node
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-node
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-controller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: csi-forca-controller
+subjects:
+- kind: ServiceAccount
+  name: csi-forca-controller
+  namespace: csi-forca-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/component: node
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-node
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: csi-forca-node
+subjects:
+- kind: ServiceAccount
+  name: csi-forca-node
+  namespace: csi-forca-system
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: csi-forca
+    app.kubernetes.io/component: controller-metrics
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-controller-metrics
+  namespace: csi-forca-system
+spec:
+  ports:
+  - name: metrics
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: csi-forca
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: csi-forca
+    app.kubernetes.io/component: node-metrics
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-node-metrics
+  namespace: csi-forca-system
+spec:
+  clusterIP: None
+  ports:
+  - name: metrics
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: csi-forca
+    app.kubernetes.io/component: node
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: csi-forca
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-controller
+  namespace: csi-forca-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csi-forca
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/managed-by: kustomize
+      app.kubernetes.io/name: csi-forca
+      app.kubernetes.io/part-of: csi-forca
+      app.kubernetes.io/version: "1.28"
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: csi-forca
+        app.kubernetes.io/component: controller
+        app.kubernetes.io/managed-by: kustomize
+        app.kubernetes.io/name: csi-forca
+        app.kubernetes.io/part-of: csi-forca
+        app.kubernetes.io/version: "1.28"
+    spec:
+      containers:
+      - args:
+        - --endpoint=$(CSI_ENDPOINT)
+        - --mode=controller
+        - --metrics-addr=:8081
+        env:
+        - name: DRIVER_NAME
+          value: csi.forca.datagarden.tech
+        - name: CSI_ENDPOINT
+          value: unix:///csi/csi.sock
+        image: ghcr.io/datagarden-tech/csi-forca-controller:1.0.0-rc1
+        imagePullPolicy: IfNotPresent
+        name: csi-forca-controller
+        ports:
+        - containerPort: 8081
+          name: metrics
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+      - args:
+        - --csi-address=/csi/csi.sock
+        - --leader-election=true
+        - --leader-election-namespace=$(POD_NAMESPACE)
+        - --feature-gates=Topology=false
+        - --extra-create-metadata=true
+        - --default-fstype=ext4
+        - --http-endpoint=:9801
+        - --v=2
+        env:
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        image: registry.k8s.io/sig-storage/csi-provisioner:v5.2.0
+        imagePullPolicy: IfNotPresent
+        name: external-provisioner
+        ports:
+        - containerPort: 9801
+          name: metrics
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+      - args:
+        - --csi-address=/csi/csi.sock
+        - --health-port=9808
+        - --v=2
+        image: registry.k8s.io/sig-storage/livenessprobe:v2.16.0
+        imagePullPolicy: IfNotPresent
+        name: livenessprobe
+        ports:
+        - containerPort: 9808
+          name: healthz
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 32Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+      securityContext:
+        fsGroup: 65532
+        runAsGroup: 65532
+        runAsNonRoot: true
+        runAsUser: 65532
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: csi-forca-controller
+      volumes:
+      - emptyDir: {}
+        name: csi-socket
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  labels:
+    app: csi-forca
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-controller
+  namespace: csi-forca-system
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: csi-forca
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/managed-by: kustomize
+      app.kubernetes.io/name: csi-forca
+      app.kubernetes.io/part-of: csi-forca
+      app.kubernetes.io/version: "1.28"
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: csi-forca
+    app.kubernetes.io/component: node
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi-forca-node
+  namespace: csi-forca-system
+spec:
+  selector:
+    matchLabels:
+      app: csi-forca
+      app.kubernetes.io/component: node
+      app.kubernetes.io/managed-by: kustomize
+      app.kubernetes.io/name: csi-forca
+      app.kubernetes.io/part-of: csi-forca
+      app.kubernetes.io/version: "1.28"
+  template:
+    metadata:
+      labels:
+        app: csi-forca
+        app.kubernetes.io/component: node
+        app.kubernetes.io/managed-by: kustomize
+        app.kubernetes.io/name: csi-forca
+        app.kubernetes.io/part-of: csi-forca
+        app.kubernetes.io/version: "1.28"
+    spec:
+      containers:
+      - args:
+        - --endpoint=$(CSI_ENDPOINT)
+        - --mode=node
+        - --nsenter=/bin/nsenter
+        - --metrics-addr=:8081
+        env:
+        - name: CSI_ENDPOINT
+          value: unix:///csi/csi.sock
+        - name: KUBELET_DIR
+          value: /var/lib/kubelet
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        image: ghcr.io/datagarden-tech/csi-forca-node:1.0.0-rc1
+        imagePullPolicy: IfNotPresent
+        name: csi-forca-node
+        ports:
+        - containerPort: 8081
+          name: metrics
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: true
+          capabilities:
+            add:
+            - SYS_ADMIN
+          privileged: true
+          runAsGroup: 0
+          runAsUser: 0
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+        - mountPath: /var/lib/kubelet
+          mountPropagation: Bidirectional
+          name: kubelet-dir
+        - mountPath: /var/lib/kubelet/plugins
+          mountPropagation: Bidirectional
+          name: plugins-dir
+        - mountPath: /var/lib/kubelet/plugins_registry
+          name: registry-dir
+        - mountPath: /dev
+          name: dev
+        - mountPath: /sys
+          name: sys
+          readOnly: true
+        - mountPath: /run
+          name: run
+        - mountPath: /proc
+          name: proc
+      - args:
+        - --csi-address=/csi/csi.sock
+        - --kubelet-registration-path=/var/lib/kubelet/plugins/csi.forca.datagarden.tech/csi.sock
+        - --v=2
+        env:
+        - name: KUBE_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.13.0
+        imagePullPolicy: IfNotPresent
+        name: node-driver-registrar
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 20m
+            memory: 32Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 65532
+          runAsNonRoot: true
+          runAsUser: 65532
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+        - mountPath: /registration
+          name: registry-dir
+      - args:
+        - --csi-address=/csi/csi.sock
+        - --health-port=9808
+        - --v=2
+        image: registry.k8s.io/sig-storage/livenessprobe:v2.16.0
+        imagePullPolicy: IfNotPresent
+        name: livenessprobe
+        ports:
+        - containerPort: 9808
+          name: healthz
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 32Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 65532
+          runAsNonRoot: true
+          runAsUser: 65532
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+      hostPID: true
+      initContainers:
+      - command:
+        - sh
+        - -c
+        - |
+          chmod 755 /csi
+          echo "Socket directory prepared: $(ls -ld /csi)"
+        image: busybox:1.37
+        name: socket-dir-init
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - CHOWN
+            - FOWNER
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsGroup: 0
+          runAsUser: 0
+        volumeMounts:
+        - mountPath: /csi
+          name: csi-socket
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: csi-forca-node
+      tolerations:
+      - operator: Exists
+      volumes:
+      - hostPath:
+          path: /var/lib/kubelet/plugins/csi.forca.datagarden.tech
+          type: DirectoryOrCreate
+        name: csi-socket
+      - hostPath:
+          path: /var/lib/kubelet
+          type: Directory
+        name: kubelet-dir
+      - hostPath:
+          path: /var/lib/kubelet/plugins
+          type: DirectoryOrCreate
+        name: plugins-dir
+      - hostPath:
+          path: /var/lib/kubelet/plugins_registry
+          type: Directory
+        name: registry-dir
+      - hostPath:
+          path: /dev
+          type: Directory
+        name: dev
+      - hostPath:
+          path: /sys
+          type: Directory
+        name: sys
+      - hostPath:
+          path: /run
+          type: Directory
+        name: run
+      - hostPath:
+          path: /proc
+          type: Directory
+        name: proc
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+---
+apiVersion: storage.k8s.io/v1
+kind: CSIDriver
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/part-of: csi-forca
+    app.kubernetes.io/version: "1.28"
+  name: csi.forca.datagarden.tech
+spec:
+  attachRequired: false
+  fsGroupPolicy: File
+  podInfoOnMount: false
+  storageCapacity: false
+  volumeLifecycleModes:
+  - Persistent

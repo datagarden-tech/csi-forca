@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Kubernetes 1.29 overlay
+# - All APIs stable, no patches required
+# - ReadWriteOncePod access mode available (1.22+)
+# - Room for future VolumeAttributesClass integration (1.31+)
+
+resources:
+  - ../../base
+
+namePrefix: ""
+nameSuffix: ""
+
+# Overlay-specific labels (v5 transformer)
+labels:
+  - pairs:
+      app.kubernetes.io/version: "1.29"
+    includeSelectors: true
+    includeTemplates: true

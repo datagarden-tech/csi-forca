@@ -1,0 +1,16 @@
+apiVersion: storage.k8s.io/v1
+kind: CSIDriver
+metadata:
+  name: csi.forca.datagarden.tech
+spec:
+  # Skip-Attach: no ControllerPublish/Unpublish
+  attachRequired: false
+  # Do not propagate pod metadata to NodePublish
+  podInfoOnMount: false
+  # Delegate fsGroup to CSI driver
+  fsGroupPolicy: File
+  # Support both Filesystem and Block modes
+  volumeLifecycleModes:
+    - Persistent
+  # Storage capacity tracking disabled for v0.1
+  storageCapacity: false

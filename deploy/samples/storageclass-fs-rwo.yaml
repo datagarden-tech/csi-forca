@@ -1,0 +1,32 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: csi-forca-fs-rwo
+  labels:
+    app.kubernetes.io/name: csi-forca
+# CSI driver identity
+provisioner: csi.forca.datagarden.tech
+# Volume expansion disabled in v0.1
+allowVolumeExpansion: false
+# Filesystem mode (ext4) — production defaults
+parameters:
+  csi.storage.k8s.io/fstype: ext4
+  # Filesystem initialization policy.
+  # "safe" (default): never destroys existing filesystem data; returns FailedPrecondition
+  # on type mismatch or detected corruption.
+  # "always": destructive reformat on mismatch/corruption — scratch-pool test envs only.
+  csi.forca.datagarden.tech/mkfsPolicy: "safe"
+  # Explicit zeroing ensures volumes are zero-initialised before first use (default: true).
+  # Prevents residual-data reads on fresh volumes. Requires Vitiscale API >= 2026-02-24.
+  # Set "false" only when the application guarantees full overwrite before any
+  # security-sensitive read, and only in single-tenant storage pools.
+  vitiscale.zeroing: "true"
+  # Environment-specific parameters (set in your overlay or inline):
+  # vitiscale.targetName: k8s-tcp
+  # vitiscale.ft: "3"
+# Retain volumes for safety
+reclaimPolicy: Retain
+# Bind immediately (no WaitForFirstConsumer in v0.1)
+volumeBindingMode: Immediate
+# Support both Filesystem and Block (CSI driver capability)
+# Note: This StorageClass uses Filesystem; see storageclass-block-rwo.yaml for Block

@@ -1,0 +1,146 @@
+# Naming policy: Product name is "csi-forca" (Kubernetes resources, labels, namespace).
+# CSI driver name "csi.forca.datagarden.tech" is the canonical CSI identity.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csi-forca-controller
+  namespace: csi-forca-system
+  labels:
+    app: csi-forca
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/component: controller
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: csi-forca
+      app.kubernetes.io/component: controller
+  template:
+    metadata:
+      labels:
+        app: csi-forca
+        app.kubernetes.io/name: csi-forca
+        app.kubernetes.io/component: controller
+    spec:
+      serviceAccountName: csi-forca-controller
+      # Controller runs fully non-root
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        runAsGroup: 65532
+        fsGroup: 65532
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+        - name: csi-socket
+          emptyDir: {}
+      containers:
+        # Main CSI controller service (product name: csi-forca)
+        - name: csi-forca-controller
+          image: ghcr.io/datagarden-tech/csi-forca-controller:0.1-260308.gf83ba3bfba17
+          imagePullPolicy: IfNotPresent
+          args:
+            - --endpoint=$(CSI_ENDPOINT)
+            - --mode=controller
+            - --metrics-addr=:8081
+          env:
+            # DRIVER_NAME is the canonical CSI identity
+            - name: DRIVER_NAME
+              value: csi.forca.datagarden.tech
+            - name: CSI_ENDPOINT
+              value: unix:///csi/csi.sock
+          ports:
+            - name: metrics
+              containerPort: 8081
+              protocol: TCP
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+        # external-provisioner sidecar
+        - name: external-provisioner
+          image: registry.k8s.io/sig-storage/csi-provisioner:v5.2.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - --csi-address=/csi/csi.sock
+            - --leader-election=true
+            - --leader-election-namespace=$(POD_NAMESPACE)
+            - --feature-gates=Topology=false
+            - --extra-create-metadata=true
+            - --default-fstype=ext4
+            - --http-endpoint=:9801
+            - --v=2
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          ports:
+            - name: metrics
+              containerPort: 9801
+              protocol: TCP
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+        # livenessprobe sidecar
+        - name: livenessprobe
+          image: registry.k8s.io/sig-storage/livenessprobe:v2.16.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - --csi-address=/csi/csi.sock
+            - --health-port=9808
+            - --v=2
+          ports:
+            - name: healthz
+              containerPort: 9808
+              protocol: TCP
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL

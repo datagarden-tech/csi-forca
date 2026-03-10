@@ -1,0 +1,57 @@
+Datagarden Proprietary License
+==============================
+
+Copyright (c) 2025 Datagarden.
+All rights reserved.
+
+https://www.datagarden.tech
+
+This repository contains configuration files, deployment artifacts,
+and documentation related to Datagarden software products.
+
+The software referenced by this repository, including container images,
+binaries, drivers, and other executable components, is proprietary
+software owned by Datagarden.
+
+No rights to use, copy, modify, distribute, sublicense, or create
+derivative works of the software are granted by this repository
+except as expressly provided in a separate written agreement
+between you and Datagarden.
+
+Permitted Use
+
+You may view and download the contents of this repository solely for
+the purpose of evaluating, installing, and operating Datagarden
+software in accordance with a valid commercial agreement with
+Datagarden.
+
+Restrictions
+
+Unless expressly permitted by such agreement, you may not:
+
+- copy, modify, or redistribute the software
+- create derivative works
+- reverse engineer, decompile, or disassemble the software
+- remove or alter any copyright notices
+- use the software to provide services to third parties
+
+Ownership
+
+All intellectual property rights in the software remain the exclusive
+property of Datagarden and its licensors.
+
+No Implied Rights
+
+No license or rights are granted by implication, estoppel,
+or otherwise beyond those expressly stated in a written agreement
+with Datagarden.
+
+Trademarks
+
+Datagarden and related product names are trademarks or registered
+trademarks of Datagarden.
+
+Contact
+
+For licensing inquiries, please contact:
+info@datagarden.tech

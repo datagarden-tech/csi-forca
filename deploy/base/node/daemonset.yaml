@@ -1,0 +1,226 @@
+# Naming policy: Product name is "csi-forca" (Kubernetes resources, labels, namespace).
+# CSI driver name "csi.forca.datagarden.tech" is the canonical CSI identity.
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: csi-forca-node
+  namespace: csi-forca-system
+  labels:
+    app: csi-forca
+    app.kubernetes.io/name: csi-forca
+    app.kubernetes.io/component: node
+spec:
+  selector:
+    matchLabels:
+      app: csi-forca
+      app.kubernetes.io/component: node
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: csi-forca
+        app.kubernetes.io/name: csi-forca
+        app.kubernetes.io/component: node
+    spec:
+      serviceAccountName: csi-forca-node
+      # Node plugin requires host PID namespace for nsenter
+      hostPID: true
+      # Allow scheduling on control-plane nodes
+      tolerations:
+        - operator: Exists
+      # Pod-level security context (nsenter container requires privileged)
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      # Init container to prepare socket directory with correct permissions
+      initContainers:
+        - name: socket-dir-init
+          image: busybox:1.37
+          command:
+            - sh
+            - -c
+            - |
+              chmod 755 /csi
+              echo "Socket directory prepared: $(ls -ld /csi)"
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+          securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - CHOWN
+                - FOWNER
+      volumes:
+        # CSI socket directory (driver-specific directory under kubelet plugins)
+        - name: csi-socket
+          hostPath:
+            path: /var/lib/kubelet/plugins/csi.forca.datagarden.tech
+            type: DirectoryOrCreate
+        # Kubelet root directory
+        - name: kubelet-dir
+          hostPath:
+            path: /var/lib/kubelet
+            type: Directory
+        # CSI plugins directory (for socket registration)
+        - name: plugins-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins
+            type: DirectoryOrCreate
+        # CSI driver registrar socket
+        - name: registry-dir
+          hostPath:
+            path: /var/lib/kubelet/plugins_registry
+            type: Directory
+        # Host /dev for block device access
+        - name: dev
+          hostPath:
+            path: /dev
+            type: Directory
+        # Host /sys for sysfs access (read-only)
+        - name: sys
+          hostPath:
+            path: /sys
+            type: Directory
+        # Host /run for runtime state
+        - name: run
+          hostPath:
+            path: /run
+            type: Directory
+        # Host /proc for process inspection (nsenter)
+        - name: proc
+          hostPath:
+            path: /proc
+            type: Directory
+      containers:
+        # Main CSI node plugin (privileged for nsenter and mount operations; product name: csi-forca)
+        - name: csi-forca-node
+          image: ghcr.io/datagarden-tech/csi-forca-node:0.1-260308.gf83ba3bfba17
+          imagePullPolicy: IfNotPresent
+          args:
+            - --endpoint=$(CSI_ENDPOINT)
+            - --mode=node
+            - --nsenter=/bin/nsenter
+            - --metrics-addr=:8081
+          env:
+            - name: CSI_ENDPOINT
+              value: unix:///csi/csi.sock
+            - name: KUBELET_DIR
+              value: /var/lib/kubelet
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          ports:
+            - name: metrics
+              containerPort: 8081
+              protocol: TCP
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+            - name: kubelet-dir
+              mountPath: /var/lib/kubelet
+              mountPropagation: Bidirectional
+            - name: plugins-dir
+              mountPath: /var/lib/kubelet/plugins
+              mountPropagation: Bidirectional
+            - name: registry-dir
+              mountPath: /var/lib/kubelet/plugins_registry
+            - name: dev
+              mountPath: /dev
+            - name: sys
+              mountPath: /sys
+              readOnly: true
+            - name: run
+              mountPath: /run
+            - name: proc
+              mountPath: /proc
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          # Node plugin requires privileged mode for mount/umount and nsenter
+          securityContext:
+            privileged: true
+            runAsUser: 0
+            runAsGroup: 0
+            allowPrivilegeEscalation: true
+            capabilities:
+              add:
+                - SYS_ADMIN
+        # node-driver-registrar sidecar (non-privileged)
+        - name: node-driver-registrar
+          image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.13.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - --csi-address=/csi/csi.sock
+            - --kubelet-registration-path=/var/lib/kubelet/plugins/csi.forca.datagarden.tech/csi.sock
+            - --v=2
+          env:
+            - name: KUBE_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+            - name: registry-dir
+              mountPath: /registration
+          resources:
+            requests:
+              cpu: 20m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 65532
+            runAsGroup: 65532
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+        # livenessprobe sidecar
+        - name: livenessprobe
+          image: registry.k8s.io/sig-storage/livenessprobe:v2.16.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - --csi-address=/csi/csi.sock
+            - --health-port=9808
+            - --v=2
+          ports:
+            - name: healthz
+              containerPort: 9808
+              protocol: TCP
+          volumeMounts:
+            - name: csi-socket
+              mountPath: /csi
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 65532
+            runAsGroup: 65532
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL

@@ -1,0 +1,21 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: csi-forca-block-rwo
+  labels:
+    app.kubernetes.io/name: csi-forca
+# CSI driver identity
+provisioner: csi.forca.datagarden.tech
+# Volume expansion disabled in v0.1
+allowVolumeExpansion: false
+# Block mode (no fsType)
+parameters:
+  # Example: target connection parameters (implementation-specific)
+  # target: "nvme-tcp://192.0.2.10:4420"
+  # subsystem: "nqn.2024.io.example:storage"
+  volumeMode: Block
+# Retain volumes for safety
+reclaimPolicy: Retain
+# Bind immediately (no WaitForFirstConsumer in v0.1)
+volumeBindingMode: Immediate
+# Raw block device access - no filesystem
