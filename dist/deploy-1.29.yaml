@@ -289,7 +289,7 @@ spec:
           value: csi.forca.datagarden.tech
         - name: CSI_ENDPOINT
           value: unix:///csi/csi.sock
-        image: ghcr.io/datagarden-tech/csi-forca-controller:1.0.0-rc1
+        image: ghcr.io/datagarden-tech/csi-forca-controller:1.0.0
         imagePullPolicy: IfNotPresent
         name: csi-forca-controller
         ports:
@@ -461,7 +461,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
-        image: ghcr.io/datagarden-tech/csi-forca-node:1.0.0-rc1
+        image: ghcr.io/datagarden-tech/csi-forca-node:1.0.0
         imagePullPolicy: IfNotPresent
         name: csi-forca-node
         ports:

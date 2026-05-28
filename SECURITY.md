@@ -19,7 +19,7 @@ For general licensing or commercial inquiries, contact: info@datagarden.tech
 
 | Release | Status |
 |---------|--------|
-| 1.0.0-rc1 | Supported (current) |
+| 1.0.0 | Supported (current) |
 
 Only the most recent release receives security fixes.
 Older releases are not patched.
@@ -39,7 +39,7 @@ releases/<version>/cosign.pub
 ### Verify a container image
 
 ```bash
-VERSION=1.0.0-rc1
+VERSION=1.0.0
 
 cosign verify \
   --key releases/${VERSION}/cosign.pub \
@@ -64,8 +64,8 @@ releases/<version>/scan-report.txt   (human-readable)
 releases/<version>/scan-report.json  (machine-readable)
 ```
 
-Known vulnerabilities accepted at release time are documented in
-`releases/<version>/RC1-VALIDATION.md` under the Security Notes section.
+Known vulnerabilities accepted at release time are documented in the release validation summary
+under Security Notes in `releases/<version>/`.
 
 ---
 

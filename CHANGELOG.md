@@ -4,9 +4,40 @@ This file records notable changes per release. Format: [Keep a Changelog](https:
 
 ---
 
-## [1.0.0-rc1] — Unreleased (RC freeze 2026-03-08)
+## [1.0.0] — 2026-05-28
+
+General Availability release. GA gate cleared.
+
+### Kubernetes runtime matrix
+
+| Version | Overlay / dist bundle | Status |
+|---------|----------------------|--------|
+| 1.28.15 | `k8s-1-28` / `deploy-1.28.yaml` | ✅ smoke.e2e PASS |
+| 1.29.15 | `k8s-1-29` / `deploy-1.29.yaml` | ✅ smoke.e2e PASS |
+| 1.30.14 | `test-cluster` overlay (no dedicated dist bundle) | ✅ smoke.e2e PASS |
+| 1.31.14 | `k8s-1-31` / `deploy-1.31.yaml` | ✅ smoke.e2e PASS |
+
+Kubernetes 1.30 is runtime-validated using the existing test-cluster overlay; no dedicated 1.30 dist bundle is shipped.
+
+### Changes since RC1
+
+- **grpc CVE-2026-33186 remediated** — `google.golang.org/grpc` upgraded from v1.76.0 to v1.79.3 (CRITICAL, authorization bypass via HTTP/2 path validation).
+- `mkfsPolicy=safe` validated end-to-end across all supported Kubernetes versions.
+- `allowVolumeExpansion=false` is set in all StorageClass examples; volume expansion is not supported in the GA scope.
+- Release artifacts include signed container images (cosign), SBOMs (SPDX), image digests, and clean vulnerability scans (0 HIGH/CRITICAL).
+- Validation report renamed from `RC1-VALIDATION.md` to `VALIDATION.md` for all GA and future releases.
+
+### Validation artifacts
+
+See [releases/1.0.0/VALIDATION.md](releases/1.0.0/VALIDATION.md) for the full GA validation record.
+
+---
+
+## [1.0.0-rc1] — 2026-03-08 (published 2026-03-10)
 
 First release candidate. Targets production NVMe/TCP block storage with the Vitiscale backend.
+
+Public GitHub release published: [https://github.com/datagarden-tech/csi-forca/releases/tag/1.0.0-rc1](https://github.com/datagarden-tech/csi-forca/releases/tag/1.0.0-rc1)
 
 ### Supported Kubernetes versions
 

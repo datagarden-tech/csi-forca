@@ -1,0 +1,37 @@
+# Trivy Vulnerability Scan — 1.0.0
+# Generated: 2026-05-28T13:01:32Z
+# Gate: no HIGH/CRITICAL findings allowed
+
+## Controller: ghcr.io/datagarden-tech/csi-forca-controller:1.0.0
+
+
+Report Summary
+
+┌───────────────────────────────────────────────────────────────────┬──────────┬─────────────────┬─────────┐
+│                              Target                               │   Type   │ Vulnerabilities │ Secrets │
+├───────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+│ ghcr.io/datagarden-tech/csi-forca-controller:1.0.0 (debian 12.14) │  debian  │        0        │    -    │
+├───────────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+│ bin/csi-forca-controller                                          │ gobinary │        0        │    -    │
+└───────────────────────────────────────────────────────────────────┴──────────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+## Node: ghcr.io/datagarden-tech/csi-forca-node:1.0.0
+
+
+Report Summary
+
+┌─────────────────────────────────────────────────────────────┬──────────┬─────────────────┬─────────┐
+│                           Target                            │   Type   │ Vulnerabilities │ Secrets │
+├─────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+│ ghcr.io/datagarden-tech/csi-forca-node:1.0.0 (debian 12.14) │  debian  │        0        │    -    │
+├─────────────────────────────────────────────────────────────┼──────────┼─────────────────┼─────────┤
+│ bin/csi-forca-node                                          │ gobinary │        0        │    -    │
+└─────────────────────────────────────────────────────────────┴──────────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+

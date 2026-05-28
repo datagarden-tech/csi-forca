@@ -17,9 +17,9 @@ resources:
 # Image tag management (updated by CI or manual overlays)
 images:
   - name: ghcr.io/datagarden-tech/csi-forca-controller
-    newTag: 1.0.0-rc1
+    newTag: 1.0.0
   - name: ghcr.io/datagarden-tech/csi-forca-node
-    newTag: 1.0.0-rc1
+    newTag: 1.0.0
 
 # Labels applied to all resources (v5 transformer)
 # Product name: csi-forca (no "dg-" prefix per naming policy)

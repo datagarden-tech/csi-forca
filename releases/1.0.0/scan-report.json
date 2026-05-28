@@ -1,25 +1,25 @@
-{"version":"1.0.0-rc1","generated":"2026-03-09T17:25:42Z", "controller":
+{"version":"1.0.0","generated":"2026-05-28T13:01:32Z", "controller":
 {
   "SchemaVersion": 2,
   "Trivy": {
     "Version": "0.69.3"
   },
-  "ReportID": "019cd3a2-1bc2-7e9e-be27-f7cf2f599a95",
-  "CreatedAt": "2026-03-09T13:25:42.466959541-04:00",
-  "ArtifactID": "sha256:8b43aa0e66933bfe434ebfe7f6cffedcda82f1dfc194b2802e3e7818103f986b",
-  "ArtifactName": "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0-rc1",
+  "ReportID": "019e6ead-011b-799c-a07c-a56997e1ef54",
+  "CreatedAt": "2026-05-28T09:01:32.315631501-04:00",
+  "ArtifactID": "sha256:bd266183545782ab28b867bcc75cf41fd36cb73c174c1dba688dea0b74262e58",
+  "ArtifactName": "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 36556288,
+    "Size": 36619776,
     "OS": {
       "Family": "debian",
-      "Name": "12.13"
+      "Name": "12.14"
     },
-    "ImageID": "sha256:b8ae77d191f987a3b9dc7ff1bc7df1d82f090d52a555deae29adf4a953a1d301",
+    "ImageID": "sha256:e2f5c0327a02b658cd3c27801fbf61c31800bbf37b135d8468076ae0177ecf4f",
     "DiffIDs": [
-      "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0",
+      "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245",
       "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
-      "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa",
+      "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710",
       "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9",
       "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
       "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
@@ -29,22 +29,24 @@
       "sha256:ad51d0769d16ba578106a177987dfe3d2e02c1668c852b795b2f6b024068242a",
       "sha256:6e7fbcf090d09b73a4aa85f9dce690d0ace73877c150b7c56955487b6e7a822a",
       "sha256:33b37ab0b0901175c2699d81c10b0c887f0dff944de74763cca00c155904d6fb",
-      "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe",
-      "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98",
-      "sha256:b19dab91f425760e4da92c9400631862b082738230e001dd914c842e451e2401",
-      "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+      "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558",
+      "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba",
+      "sha256:e58660fcd65b612c49c756d5b88c87936f8881416b8341434d593b3ebf7d1de4",
+      "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
     ],
     "RepoTags": [
-      "ghcr.io/datagarden-tech/csi-forca-controller:0.1-260308.gf83ba3bfba17",
-      "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0-rc1"
+      "csi-forca-controller:1.0.0",
+      "csi-forca-controller:dev",
+      "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0"
     ],
     "RepoDigests": [
-      "ghcr.io/datagarden-tech/csi-forca-controller@sha256:b8ae77d191f987a3b9dc7ff1bc7df1d82f090d52a555deae29adf4a953a1d301"
+      "csi-forca-controller@sha256:e2f5c0327a02b658cd3c27801fbf61c31800bbf37b135d8468076ae0177ecf4f",
+      "ghcr.io/datagarden-tech/csi-forca-controller@sha256:e2f5c0327a02b658cd3c27801fbf61c31800bbf37b135d8468076ae0177ecf4f"
     ],
-    "Reference": "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0-rc1",
+    "Reference": "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-03-08T12:05:11.357300906-04:00",
+      "created": "2026-05-28T07:57:20.590568136-04:00",
       "history": [
         {
           "created": "1970-01-01T00:00:00Z",
@@ -103,83 +105,83 @@
           "created_by": "bazel build @bookworm//libssl3/amd64:data_statusd"
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "ARG VERSION=dev",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "ARG COMMIT=unknown",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "ARG BUILD_DATE=unknown",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.title=CSI Forca Controller",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.description=Kubernetes CSI driver controller for high-performance block storage",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.vendor=Datagarden",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
-          "created_by": "LABEL org.opencontainers.image.version=0.1-260308.gf83ba3bfba17",
+          "created": "2026-05-27T10:07:10Z",
+          "created_by": "LABEL org.opencontainers.image.version=1.0.0",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
-          "created_by": "LABEL org.opencontainers.image.revision=f83ba3bfba17",
+          "created": "2026-05-27T10:07:10Z",
+          "created_by": "LABEL org.opencontainers.image.revision=cb76a395bba2",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
-          "created_by": "LABEL org.opencontainers.image.created=2026-03-08T16:04:24Z",
+          "created": "2026-05-27T10:07:10Z",
+          "created_by": "LABEL org.opencontainers.image.created=2026-05-28T11:56:32Z",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.url=https://www.datagarden.ru",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "USER 65532:65532",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "WORKDIR /csi",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:05:11Z",
+          "created": "2026-05-28T11:57:20Z",
           "created_by": "COPY --chown=65532:65532 /out/csi-forca-controller /bin/csi-forca-controller # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:05:11Z",
+          "created": "2026-05-28T11:57:20Z",
           "created_by": "ENTRYPOINT [\"/bin/csi-forca-controller\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -189,9 +191,9 @@
       "rootfs": {
         "type": "layers",
         "diff_ids": [
-          "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0",
+          "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245",
           "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
-          "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa",
+          "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710",
           "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9",
           "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
           "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
@@ -201,10 +203,10 @@
           "sha256:ad51d0769d16ba578106a177987dfe3d2e02c1668c852b795b2f6b024068242a",
           "sha256:6e7fbcf090d09b73a4aa85f9dce690d0ace73877c150b7c56955487b6e7a822a",
           "sha256:33b37ab0b0901175c2699d81c10b0c887f0dff944de74763cca00c155904d6fb",
-          "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe",
-          "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98",
-          "sha256:b19dab91f425760e4da92c9400631862b082738230e001dd914c842e451e2401",
-          "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+          "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558",
+          "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba",
+          "sha256:e58660fcd65b612c49c756d5b88c87936f8881416b8341434d593b3ebf7d1de4",
+          "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
         ]
       },
       "config": {
@@ -216,13 +218,13 @@
           "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
         ],
         "Labels": {
-          "org.opencontainers.image.created": "2026-03-08T16:04:24Z",
+          "org.opencontainers.image.created": "2026-05-28T11:56:32Z",
           "org.opencontainers.image.description": "Kubernetes CSI driver controller for high-performance block storage",
-          "org.opencontainers.image.revision": "f83ba3bfba17",
+          "org.opencontainers.image.revision": "cb76a395bba2",
           "org.opencontainers.image.title": "CSI Forca Controller",
           "org.opencontainers.image.url": "https://www.datagarden.ru",
           "org.opencontainers.image.vendor": "Datagarden",
-          "org.opencontainers.image.version": "0.1-260308.gf83ba3bfba17"
+          "org.opencontainers.image.version": "1.0.0"
         },
         "User": "65532:65532",
         "WorkingDir": "/csi"
@@ -231,8 +233,8 @@
     "Layers": [
       {
         "Size": 327680,
-        "Digest": "sha256:526604835308e0d61f64a3d3e2d614308fef4ed655f0111a4566627296c0195c",
-        "DiffID": "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0"
+        "Digest": "sha256:875ea9878944f3daf508d0e1b87b39ebc1ecce3ccaf3ed11a3cc59f1852a540a",
+        "DiffID": "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245"
       },
       {
         "Size": 40960,
@@ -240,9 +242,9 @@
         "DiffID": "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba"
       },
       {
-        "Size": 2406400,
-        "Digest": "sha256:ef49c20a7b35aa995683f311510d35d77e203a2204f84de14a71a6d726e6af73",
-        "DiffID": "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa"
+        "Size": 2416640,
+        "Digest": "sha256:39dc083afc39bd8dc43d456fe7ff7d39292e593bb2769972c11bb2e5f9119386",
+        "DiffID": "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710"
       },
       {
         "Size": 102400,
@@ -291,43 +293,43 @@
       },
       {
         "Size": 13066240,
-        "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-        "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+        "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+        "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
       },
       {
         "Size": 5928960,
-        "Digest": "sha256:13724d053e3111cb832ee8e49539a875afa879595fa76974c70b1981f057a675",
-        "DiffID": "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98"
+        "Digest": "sha256:c3582e9a7cc7ccf68c5467a74e73a794cdb86963e7d055ee49769d09d52bfce8",
+        "DiffID": "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba"
       },
       {
         "Size": 1536,
-        "Digest": "sha256:c2c30719837086e7489df4fefa296ac7b87d7b8e16ba3f3c932e2cd6c0f9ab6b",
-        "DiffID": "sha256:b19dab91f425760e4da92c9400631862b082738230e001dd914c842e451e2401"
+        "Digest": "sha256:c130d44514b1ae91b98b11b9a06539f7b7d1b321dd847af53e009a8a37768d24",
+        "DiffID": "sha256:e58660fcd65b612c49c756d5b88c87936f8881416b8341434d593b3ebf7d1de4"
       },
       {
-        "Size": 14424576,
-        "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-        "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+        "Size": 14477824,
+        "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+        "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
       }
     ]
   },
   "Results": [
     {
-      "Target": "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0-rc1 (debian 12.13)",
+      "Target": "ghcr.io/datagarden-tech/csi-forca-controller:1.0.0 (debian 12.14)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Packages": [
         {
-          "ID": "base-files@12.4+deb12u13",
+          "ID": "base-files@12.4+deb12u14",
           "Name": "base-files",
           "Identifier": {
-            "PURL": "pkg:deb/debian/base-files@12.4%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "c507a6a7ecfdded2"
+            "PURL": "pkg:deb/debian/base-files@12.4%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "a266728343a98938"
           },
-          "Version": "12.4+deb12u13",
+          "Version": "12.4+deb12u14",
           "Arch": "amd64",
           "SrcName": "base-files",
-          "SrcVersion": "12.4+deb12u13",
+          "SrcVersion": "12.4+deb12u14",
           "Licenses": [
             "GPL-2.0-or-later"
           ],
@@ -336,8 +338,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:526604835308e0d61f64a3d3e2d614308fef4ed655f0111a4566627296c0195c",
-            "DiffID": "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0"
+            "Digest": "sha256:875ea9878944f3daf508d0e1b87b39ebc1ecce3ccaf3ed11a3cc59f1852a540a",
+            "DiffID": "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245"
           },
           "InstalledFiles": [
             "/usr/lib/os-release",
@@ -372,18 +374,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "libc6@2.36-9+deb12u13",
+          "ID": "libc6@2.36-9+deb12u14",
           "Name": "libc6",
           "Identifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
           "Version": "2.36",
-          "Release": "9+deb12u13",
+          "Release": "9+deb12u14",
           "Arch": "amd64",
           "SrcName": "glibc",
           "SrcVersion": "2.36",
-          "SrcRelease": "9+deb12u13",
+          "SrcRelease": "9+deb12u14",
           "Licenses": [
             "LGPL-2.1-only",
             "GPL-2.0-only"
@@ -393,8 +395,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "InstalledFiles": [
             "/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
@@ -685,18 +687,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "libssl3@3.0.18-1~deb12u2",
+          "ID": "libssl3@3.0.20-1~deb12u1",
           "Name": "libssl3",
           "Identifier": {
-            "PURL": "pkg:deb/debian/libssl3@3.0.18-1~deb12u2?arch=amd64\u0026distro=debian-12.13",
-            "UID": "cf560d0b2ecc8272"
+            "PURL": "pkg:deb/debian/libssl3@3.0.20-1~deb12u1?arch=amd64\u0026distro=debian-12.14",
+            "UID": "216eeef5aac44da"
           },
-          "Version": "3.0.18",
-          "Release": "1~deb12u2",
+          "Version": "3.0.20",
+          "Release": "1~deb12u1",
           "Arch": "amd64",
           "SrcName": "openssl",
-          "SrcVersion": "3.0.18",
-          "SrcRelease": "1~deb12u2",
+          "SrcVersion": "3.0.20",
+          "SrcRelease": "1~deb12u1",
           "Licenses": [
             "Apache-2.0",
             "Artistic-2.0",
@@ -708,8 +710,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:13724d053e3111cb832ee8e49539a875afa879595fa76974c70b1981f057a675",
-            "DiffID": "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98"
+            "Digest": "sha256:c3582e9a7cc7ccf68c5467a74e73a794cdb86963e7d055ee49769d09d52bfce8",
+            "DiffID": "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba"
           },
           "InstalledFiles": [
             "/usr/lib/x86_64-linux-gnu/engines-3/afalg.so",
@@ -728,7 +730,7 @@
           "ID": "media-types@10.0.0",
           "Name": "media-types",
           "Identifier": {
-            "PURL": "pkg:deb/debian/media-types@10.0.0?arch=all\u0026distro=debian-12.13",
+            "PURL": "pkg:deb/debian/media-types@10.0.0?arch=all\u0026distro=debian-12.14",
             "UID": "d381521693a5ea32"
           },
           "Version": "10.0.0",
@@ -757,7 +759,7 @@
           "ID": "netbase@6.4",
           "Name": "netbase",
           "Identifier": {
-            "PURL": "pkg:deb/debian/netbase@6.4?arch=all\u0026distro=debian-12.13",
+            "PURL": "pkg:deb/debian/netbase@6.4?arch=all\u0026distro=debian-12.14",
             "UID": "64adcbea2e4e887c"
           },
           "Version": "6.4",
@@ -782,18 +784,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "tzdata@2025b-0+deb12u2",
+          "ID": "tzdata@2026b-0+deb12u1",
           "Name": "tzdata",
           "Identifier": {
-            "PURL": "pkg:deb/debian/tzdata@2025b-0%2Bdeb12u2?arch=all\u0026distro=debian-12.13",
-            "UID": "a8a72310d4d932e1"
+            "PURL": "pkg:deb/debian/tzdata@2026b-0%2Bdeb12u1?arch=all\u0026distro=debian-12.14",
+            "UID": "cb2f86311583d698"
           },
-          "Version": "2025b",
-          "Release": "0+deb12u2",
+          "Version": "2026b",
+          "Release": "0+deb12u1",
           "Arch": "all",
           "SrcName": "tzdata",
-          "SrcVersion": "2025b",
-          "SrcRelease": "0+deb12u2",
+          "SrcVersion": "2026b",
+          "SrcRelease": "0+deb12u1",
           "Licenses": [
             "public-domain"
           ],
@@ -802,8 +804,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:ef49c20a7b35aa995683f311510d35d77e203a2204f84de14a71a6d726e6af73",
-            "DiffID": "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa"
+            "Digest": "sha256:39dc083afc39bd8dc43d456fe7ff7d39292e593bb2769972c11bb2e5f9119386",
+            "DiffID": "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710"
           },
           "InstalledFiles": [
             "/usr/share/doc/tzdata/README.Debian",
@@ -1717,220 +1719,204 @@
       ],
       "Vulnerabilities": [
         {
-          "VulnerabilityID": "CVE-2026-0861",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "VulnerabilityID": "CVE-2026-5435",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-0861",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5435",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:7b250e83bf15d072615180a67229fc1ff9c1771c1409473a81c7820a8f7af250",
-          "Title": "glibc: Integer overflow in memalign leads to heap corruption",
-          "Description": "Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.\n\nNote that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1\u003c\u003c62+ 1, 1\u003c\u003c63] and exactly 1\u003c\u003c63 for posix_memalign and aligned_alloc.\n\nTypically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "VendorSeverity": {
-            "alma": 2,
-            "azure": 2,
-            "cbl-mariner": 2,
-            "oracle-oval": 2,
-            "photon": 3,
-            "redhat": 1,
-            "rocky": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 8.1
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/01/16/5",
-            "https://access.redhat.com/errata/RHSA-2026:2786",
-            "https://access.redhat.com/security/cve/CVE-2026-0861",
-            "https://bugzilla.redhat.com/2429771",
-            "https://bugzilla.redhat.com/2430201",
-            "https://bugzilla.redhat.com/2431196",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2429771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2430201",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0861",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0915",
-            "https://errata.almalinux.org/9/ALSA-2026-2786.html",
-            "https://errata.rockylinux.org/RLSA-2026:1334",
-            "https://linux.oracle.com/cve/CVE-2026-0861.html",
-            "https://linux.oracle.com/errata/ELSA-2026-50120.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-0861",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=33796",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0001",
-            "https://ubuntu.com/security/notices/USN-8005-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-0861"
-          ],
-          "PublishedDate": "2026-01-14T21:15:52.617Z",
-          "LastModifiedDate": "2026-02-03T18:26:25.39Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2025-15281",
-          "PkgID": "libc6@2.36-9+deb12u13",
-          "PkgName": "libc6",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
-          },
-          "InstalledVersion": "2.36-9+deb12u13",
-          "Status": "affected",
-          "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-15281",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:7cea32d060518c196eaf96f3cef99c3c07746000ded324d0778301ad96af6ab9",
-          "Title": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
-          "Description": "Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.",
+          "Fingerprint": "sha256:1aa0b29b2848237c1eaf83116a422a38ae00753660dced5c2d22d5efb49fc426",
+          "Title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
+          "Description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.",
           "Severity": "MEDIUM",
           "CweIDs": [
-            "CWE-908"
+            "CWE-787"
           ],
           "VendorSeverity": {
-            "alma": 2,
-            "azure": 2,
-            "oracle-oval": 2,
-            "photon": 3,
-            "redhat": 1,
-            "rocky": 2,
-            "ubuntu": 2
+            "redhat": 2
           },
           "CVSS": {
             "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:H",
               "V3Score": 5.9
             }
           },
           "References": [
-            "http://www.openwall.com/lists/oss-security/2026/01/20/3",
-            "https://access.redhat.com/errata/RHSA-2026:2786",
-            "https://access.redhat.com/security/cve/CVE-2025-15281",
-            "https://bugzilla.redhat.com/2429771",
-            "https://bugzilla.redhat.com/2430201",
-            "https://bugzilla.redhat.com/2431196",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2429771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2430201",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2431196",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-15281",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0861",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0915",
-            "https://errata.almalinux.org/9/ALSA-2026-2786.html",
-            "https://errata.rockylinux.org/RLSA-2026:2786",
-            "https://linux.oracle.com/cve/CVE-2025-15281.html",
-            "https://linux.oracle.com/errata/ELSA-2026-50120.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2025-15281",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=33814",
-            "https://ubuntu.com/security/notices/USN-8005-1",
-            "https://www.cve.org/CVERecord?id=CVE-2025-15281",
-            "https://www.openwall.com/lists/oss-security/2026/01/20/3"
+            "https://access.redhat.com/security/cve/CVE-2026-5435",
+            "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5435",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34033",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5435"
           ],
-          "PublishedDate": "2026-01-20T14:16:07.843Z",
-          "LastModifiedDate": "2026-02-05T17:43:18.63Z"
+          "PublishedDate": "2026-04-28T13:19:22.29Z",
+          "LastModifiedDate": "2026-05-05T17:38:37.03Z"
         },
         {
-          "VulnerabilityID": "CVE-2026-0915",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "VulnerabilityID": "CVE-2026-5450",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-0915",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5450",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6083b3001ed05ff10892824ec52a1fddecfbe36b197f89db6e39e72ad67d7185",
-          "Title": "glibc: glibc: Information disclosure via zero-valued network query",
-          "Description": "Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library's DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.",
+          "Fingerprint": "sha256:f463fb45264cbb33b574169dbfdf5ce1da5cbf4dfd2710daad835f5c964fa1ea",
+          "Title": "glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width",
+          "Description": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.",
           "Severity": "MEDIUM",
           "CweIDs": [
-            "CWE-908"
+            "CWE-122",
+            "CWE-787"
           ],
           "VendorSeverity": {
-            "alma": 2,
-            "azure": 1,
-            "cbl-mariner": 2,
-            "oracle-oval": 2,
-            "photon": 3,
-            "redhat": 2,
-            "rocky": 2,
-            "ubuntu": 2
+            "photon": 4,
+            "redhat": 2
           },
           "CVSS": {
             "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-              "V3Score": 5.3
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:L/A:H",
+              "V3Score": 5
             }
           },
           "References": [
-            "http://www.openwall.com/lists/oss-security/2026/01/16/6",
-            "https://access.redhat.com/errata/RHSA-2026:2786",
-            "https://access.redhat.com/security/cve/CVE-2026-0915",
-            "https://bugzilla.redhat.com/2429771",
-            "https://bugzilla.redhat.com/2430201",
-            "https://bugzilla.redhat.com/2431196",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2429771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2430201",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0861",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0915",
-            "https://errata.almalinux.org/9/ALSA-2026-2786.html",
-            "https://errata.rockylinux.org/RLSA-2026:1334",
-            "https://linux.oracle.com/cve/CVE-2026-0915.html",
-            "https://linux.oracle.com/errata/ELSA-2026-50120.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-0915",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=33802",
-            "https://ubuntu.com/security/notices/USN-8005-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-0915",
-            "https://www.openwall.com/lists/oss-security/2026/01/16/6"
+            "https://access.redhat.com/security/cve/CVE-2026-5450",
+            "https://inbox.sourceware.org/libc-announce/b11f0003-6ec1-4bd6-b9de-9e38a4efeca3@redhat.com/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5450",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5450#range-21286997",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=CVE-2026-5450",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5450"
           ],
-          "PublishedDate": "2026-01-15T22:16:12.457Z",
-          "LastModifiedDate": "2026-01-23T19:36:50.73Z"
+          "PublishedDate": "2026-04-20T21:16:36.85Z",
+          "LastModifiedDate": "2026-04-23T15:33:34.277Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-5928",
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgName": "libc6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
+          },
+          "InstalledVersion": "2.36-9+deb12u14",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5928",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:d7cd70bc301eea19dc015abfd3d72c349af87a97fdce1c6dcb103b748c0012f6",
+          "Title": "glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings",
+          "Description": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.\n\nA bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-127"
+          ],
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:H",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-5928",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5928",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=33998",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5928"
+          ],
+          "PublishedDate": "2026-04-20T21:16:36.963Z",
+          "LastModifiedDate": "2026-04-23T15:33:43.69Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-6238",
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgName": "libc6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
+          },
+          "InstalledVersion": "2.36-9+deb12u14",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6238",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:1520755f9e08a2319e077f5563ef54857b0feca04b63fb8ac05a8d61a8f7fff3",
+          "Title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
+          "Description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.\n\nThese functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-6238",
+            "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6238",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34069",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6238"
+          ],
+          "PublishedDate": "2026-04-28T19:37:47.523Z",
+          "LastModifiedDate": "2026-05-04T17:57:24.007Z"
         },
         {
           "VulnerabilityID": "CVE-2010-4756",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2010-4756",
@@ -1939,7 +1925,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:662e1fdc84f22504b32e37f1cee06659fe1b7fb7a640ecf7c894e81b5f39a2a5",
+          "Fingerprint": "sha256:c243b7e34b2a136cf4c4594569e3ee27474338427587e34e0c78f621ac657eba",
           "Title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
           "Description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
           "Severity": "LOW",
@@ -1973,21 +1959,21 @@
             "https://www.cve.org/CVERecord?id=CVE-2010-4756"
           ],
           "PublishedDate": "2011-03-02T20:00:01.037Z",
-          "LastModifiedDate": "2025-11-03T22:15:41.51Z"
+          "LastModifiedDate": "2026-04-29T01:13:23.04Z"
         },
         {
           "VulnerabilityID": "CVE-2018-20796",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20796",
@@ -1996,7 +1982,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:69b61417d6a0c0480d1d58ed832d511511a9e7fb472377d7c3602878a13502db",
+          "Fingerprint": "sha256:d9a200bd9557439ee98d114018cddcee3afa8c35936797f6019b4fbe4b0779ee",
           "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "Description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
           "Severity": "LOW",
@@ -2036,17 +2022,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010022",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010022",
@@ -2055,7 +2041,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1ad2669543a59ee44f96634a308e5f85d1c5eb81d0b3a6529565a00677b68ed4",
+          "Fingerprint": "sha256:40b9c9ceeddb0a2dd38de3e2f106a3731179362251ac8aa53503f6ea9bc1f235",
           "Title": "glibc: stack guard protection bypass",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -2088,17 +2074,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010023",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010023",
@@ -2107,7 +2093,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2eea9a9e69810c9df0252285c041300e237c83f7cfbeb772cec846e5042ad520",
+          "Fingerprint": "sha256:7ba6f9c1a00f58e012928c644c938c65494fe104663b89cb93ba87d3ea0d6c47",
           "Title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
           "Description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -2143,17 +2129,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010024",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010024",
@@ -2162,7 +2148,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ffa7e22755881feed8728b6c180a466d4b112649f67cd3066d5d425ded3ed140",
+          "Fingerprint": "sha256:6c9e0f9aa5e6278b8b6d6d0dc7a5ab4c523bcdd01b0c808e92cbbac68c5f0f6f",
           "Title": "glibc: ASLR bypass using cache of thread stack and heap",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -2202,17 +2188,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010025",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010025",
@@ -2221,7 +2207,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:6d3212777e0fc6843234a1f2008895d21e26491ed41b867105a09e2b3b2fb326",
+          "Fingerprint": "sha256:0e72aa562c9880a2258e5a226bf04205996e3d51cf4a207e789c8e1cf20fd58a",
           "Title": "glibc: information disclosure of heap addresses of pthread_created thread",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
           "Severity": "LOW",
@@ -2260,17 +2246,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-9192",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-9192",
@@ -2279,7 +2265,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:b1d5864e93692b6ce5eb88dac9d16e7a2306e4812f9142a399074d2794a6a113",
+          "Fingerprint": "sha256:08d6cfeb0535f86fb2cdc22076ebe083cd66bd16d6e019d82bf5ccd36e0dd48a",
           "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "Description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
           "Severity": "LOW",
@@ -2316,17 +2302,17 @@
         },
         {
           "VulnerabilityID": "CVE-2025-27587",
-          "PkgID": "libssl3@3.0.18-1~deb12u2",
+          "PkgID": "libssl3@3.0.20-1~deb12u1",
           "PkgName": "libssl3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libssl3@3.0.18-1~deb12u2?arch=amd64\u0026distro=debian-12.13",
-            "UID": "cf560d0b2ecc8272"
+            "PURL": "pkg:deb/debian/libssl3@3.0.20-1~deb12u1?arch=amd64\u0026distro=debian-12.14",
+            "UID": "216eeef5aac44da"
           },
-          "InstalledVersion": "3.0.18-1~deb12u2",
+          "InstalledVersion": "3.0.20-1~deb12u1",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:13724d053e3111cb832ee8e49539a875afa879595fa76974c70b1981f057a675",
-            "DiffID": "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98"
+            "Digest": "sha256:c3582e9a7cc7ccf68c5467a74e73a794cdb86963e7d055ee49769d09d52bfce8",
+            "DiffID": "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27587",
@@ -2335,7 +2321,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:9ce2f0c5646715dc5a342aa86c686735ec018e6d8a815406812103c7dff9037b",
+          "Fingerprint": "sha256:99c9f5059f10b59e85b0dc11e1c6f7684bb5a5435a012c6e93ca5b728adaec53",
           "Title": "OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is vulnerable  ...",
           "Description": "OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is vulnerable to a Minerva attack, exploitable by measuring the time of signing of random messages using the EVP_DigestSign API, and then using the private key to extract the K value (nonce) from the signatures. Next, based on the bit size of the extracted nonce, one can compare the signing time of full-sized nonces to signatures that used smaller nonces, via statistical tests. There is a side-channel in the P-364 curve that allows private key extraction (also, there is a dependency between the bit size of K and the size of the side channel). NOTE: This CVE is disputed because the OpenSSL security policy explicitly notes that any side channels which require same physical system to be detected are outside of the threat model for the software. The timing signal is so small that it is infeasible to be detected without having the attacking process running on the same physical system.",
           "Severity": "LOW",
@@ -2350,7 +2336,7 @@
             "https://minerva.crocs.fi.muni.cz"
           ],
           "PublishedDate": "2025-06-16T22:15:44.093Z",
-          "LastModifiedDate": "2025-06-26T17:15:30.497Z"
+          "LastModifiedDate": "2026-04-15T00:35:42.02Z"
         }
       ]
     },
@@ -2364,7 +2350,7 @@
           "Name": "datagarden.tech/csi-forca",
           "Identifier": {
             "PURL": "pkg:golang/datagarden.tech/csi-forca",
-            "UID": "746fdbfe21d49944"
+            "UID": "c603784779e829ae"
           },
           "Relationship": "root",
           "DependsOn": [
@@ -2380,32 +2366,32 @@
             "go.uber.org/multierr@v1.10.0",
             "go.uber.org/zap@v1.27.0",
             "go.yaml.in/yaml/v2@v2.4.2",
-            "golang.org/x/net@v0.43.0",
-            "golang.org/x/sys@v0.35.0",
-            "golang.org/x/text@v0.28.0",
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251020155222-88f65dc88635",
-            "google.golang.org/grpc@v1.76.0",
+            "golang.org/x/net@v0.48.0",
+            "golang.org/x/sys@v0.39.0",
+            "golang.org/x/text@v0.32.0",
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
+            "google.golang.org/grpc@v1.79.3",
             "google.golang.org/protobuf@v1.36.10",
-            "stdlib@v1.25.8"
+            "stdlib@v1.25.10"
           ],
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "stdlib@v1.25.8",
+          "ID": "stdlib@v1.25.10",
           "Name": "stdlib",
           "Identifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "9f8be6ba92954553"
+            "PURL": "pkg:golang/stdlib@v1.25.10",
+            "UID": "a187391099d23d48"
           },
-          "Version": "v1.25.8",
+          "Version": "v1.25.10",
           "Relationship": "direct",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2418,8 +2404,8 @@
           },
           "Version": "v1.0.1",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2432,8 +2418,8 @@
           },
           "Version": "v2.3.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2446,8 +2432,8 @@
           },
           "Version": "v1.12.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2460,8 +2446,8 @@
           },
           "Version": "v1.6.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2474,8 +2460,8 @@
           },
           "Version": "v0.0.0-20191010083416-a7dc8b61c822",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2488,8 +2474,8 @@
           },
           "Version": "v1.23.2",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2502,8 +2488,8 @@
           },
           "Version": "v0.6.2",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2516,8 +2502,8 @@
           },
           "Version": "v0.66.1",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2530,8 +2516,8 @@
           },
           "Version": "v0.16.1",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2544,8 +2530,8 @@
           },
           "Version": "v1.10.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2558,8 +2544,8 @@
           },
           "Version": "v1.27.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2572,78 +2558,78 @@
           },
           "Version": "v2.4.2",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "golang.org/x/net@v0.43.0",
+          "ID": "golang.org/x/net@v0.48.0",
           "Name": "golang.org/x/net",
           "Identifier": {
-            "PURL": "pkg:golang/golang.org/x/net@v0.43.0",
-            "UID": "73b991336b36532f"
+            "PURL": "pkg:golang/golang.org/x/net@v0.48.0",
+            "UID": "9b10e4bcf2aaa315"
           },
-          "Version": "v0.43.0",
+          "Version": "v0.48.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "golang.org/x/sys@v0.35.0",
+          "ID": "golang.org/x/sys@v0.39.0",
           "Name": "golang.org/x/sys",
           "Identifier": {
-            "PURL": "pkg:golang/golang.org/x/sys@v0.35.0",
-            "UID": "cbc8ae68329dc68a"
+            "PURL": "pkg:golang/golang.org/x/sys@v0.39.0",
+            "UID": "6faffd37872108ca"
           },
-          "Version": "v0.35.0",
+          "Version": "v0.39.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "golang.org/x/text@v0.28.0",
+          "ID": "golang.org/x/text@v0.32.0",
           "Name": "golang.org/x/text",
           "Identifier": {
-            "PURL": "pkg:golang/golang.org/x/text@v0.28.0",
-            "UID": "ea4c955f44758b00"
+            "PURL": "pkg:golang/golang.org/x/text@v0.32.0",
+            "UID": "e7925f68429e350a"
           },
-          "Version": "v0.28.0",
+          "Version": "v0.32.0",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251020155222-88f65dc88635",
+          "ID": "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
           "Name": "google.golang.org/genproto/googleapis/rpc",
           "Identifier": {
-            "PURL": "pkg:golang/google.golang.org/genproto/googleapis/rpc@v0.0.0-20251020155222-88f65dc88635",
-            "UID": "d94096f7be8cba17"
+            "PURL": "pkg:golang/google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
+            "UID": "8cf6d671efd18266"
           },
-          "Version": "v0.0.0-20251020155222-88f65dc88635",
+          "Version": "v0.0.0-20251202230838-ff82c1b0f217",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "google.golang.org/grpc@v1.76.0",
+          "ID": "google.golang.org/grpc@v1.79.3",
           "Name": "google.golang.org/grpc",
           "Identifier": {
-            "PURL": "pkg:golang/google.golang.org/grpc@v1.76.0",
-            "UID": "7650b97f4663ef6e"
+            "PURL": "pkg:golang/google.golang.org/grpc@v1.79.3",
+            "UID": "b6018509c4745456"
           },
-          "Version": "v1.76.0",
+          "Version": "v1.79.3",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -2656,8 +2642,8 @@
           },
           "Version": "v1.36.10",
           "Layer": {
-            "Digest": "sha256:75d9ff68beaf22dec9e1a07573d56e903b9ed607f1c1226243a22bdfada57f9b",
-            "DiffID": "sha256:d3681f88026a758af0c55beb15b355f6ac22024a2dadf305402ffe46c52e9760"
+            "Digest": "sha256:9d76bca3e2de884e89f8d1d54dcff7dd7f0fc53894bec60e7bc0fbd9790a5b29",
+            "DiffID": "sha256:1cd0e8b337ca4e812827bdcc7ad799c920a416e8bc8b4497353127c94a4d96a6"
           },
           "AnalyzedBy": "gobinary"
         }
@@ -2671,22 +2657,22 @@
   "Trivy": {
     "Version": "0.69.3"
   },
-  "ReportID": "019cd3a2-1cdc-73dd-a368-04ad64a71b5b",
-  "CreatedAt": "2026-03-09T13:25:42.748254846-04:00",
-  "ArtifactID": "sha256:03b87f00509abd4e833faef4d12907f10aea7fff6962937b72b7b25ffbf4d8d8",
-  "ArtifactName": "ghcr.io/datagarden-tech/csi-forca-node:1.0.0-rc1",
+  "ReportID": "019e6ead-0248-7e8a-af93-4df1b43d6a76",
+  "CreatedAt": "2026-05-28T09:01:32.616954374-04:00",
+  "ArtifactID": "sha256:e00f989443a1591047c7c73d2b1302595650d0c8bc2a47d0f6053e4fbaf29bf4",
+  "ArtifactName": "ghcr.io/datagarden-tech/csi-forca-node:1.0.0",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 39797248,
+    "Size": 39864832,
     "OS": {
       "Family": "debian",
-      "Name": "12.13"
+      "Name": "12.14"
     },
-    "ImageID": "sha256:e7f7d706cb4e37ef5c5c1b9fbe3400f7a034c86030b7d882f4eded4c67df6fb6",
+    "ImageID": "sha256:384d973c7b6b81b9b7bfe8101a3da68a758d78843bfab35b2f9dd70ae0298079",
     "DiffIDs": [
-      "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0",
+      "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245",
       "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
-      "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa",
+      "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710",
       "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9",
       "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
       "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
@@ -2696,28 +2682,27 @@
       "sha256:ad51d0769d16ba578106a177987dfe3d2e02c1668c852b795b2f6b024068242a",
       "sha256:6e7fbcf090d09b73a4aa85f9dce690d0ace73877c150b7c56955487b6e7a822a",
       "sha256:33b37ab0b0901175c2699d81c10b0c887f0dff944de74763cca00c155904d6fb",
-      "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe",
-      "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98",
-      "sha256:b19dab91f425760e4da92c9400631862b082738230e001dd914c842e451e2401",
-      "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028",
-      "sha256:32355a8a4e65be7da0e4b76844483bacaae864a7813e6bdfaedf8e31ffd0a9af",
-      "sha256:3eaf7c11ac9bdd1aad4c4dd7a245742219574e34a1b779d34e0551c29efc64e5",
-      "sha256:aa1727793908ab6cc9dc9be8921e9c06220f7eebe0fd3a4ccc0d2781fe60ff3a"
+      "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558",
+      "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba",
+      "sha256:e58660fcd65b612c49c756d5b88c87936f8881416b8341434d593b3ebf7d1de4",
+      "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882",
+      "sha256:0cb134e69c1ef8767ed92234564d3923b1df32ba5d6032b8a622a9fb96a26108",
+      "sha256:fca1a6538e89d2df9c02688ed027b96f354bc1acd8d70d013bee7b47e142f794",
+      "sha256:9f99247f3cb29e66a849276827a8e78c09b8249ec5ff8a3c89f335ad0009d1ff"
     ],
     "RepoTags": [
-      "csi-forca-node:0.1-260308.gf83ba3bfba17",
+      "csi-forca-node:1.0.0",
       "csi-forca-node:dev",
-      "ghcr.io/datagarden-tech/csi-forca-node:0.1-260308.gf83ba3bfba17",
-      "ghcr.io/datagarden-tech/csi-forca-node:1.0.0-rc1"
+      "ghcr.io/datagarden-tech/csi-forca-node:1.0.0"
     ],
     "RepoDigests": [
-      "csi-forca-node@sha256:e7f7d706cb4e37ef5c5c1b9fbe3400f7a034c86030b7d882f4eded4c67df6fb6",
-      "ghcr.io/datagarden-tech/csi-forca-node@sha256:e7f7d706cb4e37ef5c5c1b9fbe3400f7a034c86030b7d882f4eded4c67df6fb6"
+      "csi-forca-node@sha256:384d973c7b6b81b9b7bfe8101a3da68a758d78843bfab35b2f9dd70ae0298079",
+      "ghcr.io/datagarden-tech/csi-forca-node@sha256:384d973c7b6b81b9b7bfe8101a3da68a758d78843bfab35b2f9dd70ae0298079"
     ],
-    "Reference": "ghcr.io/datagarden-tech/csi-forca-node:1.0.0-rc1",
+    "Reference": "ghcr.io/datagarden-tech/csi-forca-node:1.0.0",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-03-08T12:06:09.619165894-04:00",
+      "created": "2026-05-28T07:58:14.219984298-04:00",
       "history": [
         {
           "created": "1970-01-01T00:00:00Z",
@@ -2776,98 +2761,98 @@
           "created_by": "bazel build @bookworm//libssl3/amd64:data_statusd"
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "ARG VERSION=dev",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "ARG COMMIT=unknown",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "ARG BUILD_DATE=unknown",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.title=CSI Forca Node",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.description=Kubernetes CSI driver node service for high-performance block storage",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.vendor=Datagarden",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
-          "created_by": "LABEL org.opencontainers.image.version=0.1-260308.gf83ba3bfba17",
+          "created": "2026-05-27T10:07:10Z",
+          "created_by": "LABEL org.opencontainers.image.version=1.0.0",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
-          "created_by": "LABEL org.opencontainers.image.revision=f83ba3bfba17",
+          "created": "2026-05-27T10:07:10Z",
+          "created_by": "LABEL org.opencontainers.image.revision=cb76a395bba2",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
-          "created_by": "LABEL org.opencontainers.image.created=2026-03-08T16:05:21Z",
+          "created": "2026-05-27T10:07:10Z",
+          "created_by": "LABEL org.opencontainers.image.created=2026-05-28T11:57:26Z",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "LABEL org.opencontainers.image.url=https://www.datagarden.ru",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "USER 65532:65532",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-14T19:03:18Z",
+          "created": "2026-05-27T10:07:10Z",
           "created_by": "WORKDIR /csi",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:06:09Z",
+          "created": "2026-05-28T11:58:14Z",
           "created_by": "COPY --chown=65532:65532 /out/csi-forca-node /bin/csi-forca-node # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:06:09Z",
+          "created": "2026-05-28T11:58:14Z",
           "created_by": "COPY --chmod=0755 /nsenter-root/bin/nsenter /bin/nsenter # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:06:09Z",
+          "created": "2026-05-28T11:58:14Z",
           "created_by": "COPY /nsenter-root/lib/x86_64-linux-gnu/* /lib/x86_64-linux-gnu/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:06:09Z",
+          "created": "2026-05-28T11:58:14Z",
           "created_by": "COPY /nsenter-root/lib64/* /lib64/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-08T16:06:09Z",
+          "created": "2026-05-28T11:58:14Z",
           "created_by": "ENTRYPOINT [\"/bin/csi-forca-node\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -2877,9 +2862,9 @@
       "rootfs": {
         "type": "layers",
         "diff_ids": [
-          "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0",
+          "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245",
           "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba",
-          "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa",
+          "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710",
           "sha256:114dde0fefebbca13165d0da9c500a66190e497a82a53dcaabc3172d630be1e9",
           "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368",
           "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc",
@@ -2889,13 +2874,13 @@
           "sha256:ad51d0769d16ba578106a177987dfe3d2e02c1668c852b795b2f6b024068242a",
           "sha256:6e7fbcf090d09b73a4aa85f9dce690d0ace73877c150b7c56955487b6e7a822a",
           "sha256:33b37ab0b0901175c2699d81c10b0c887f0dff944de74763cca00c155904d6fb",
-          "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe",
-          "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98",
-          "sha256:b19dab91f425760e4da92c9400631862b082738230e001dd914c842e451e2401",
-          "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028",
-          "sha256:32355a8a4e65be7da0e4b76844483bacaae864a7813e6bdfaedf8e31ffd0a9af",
-          "sha256:3eaf7c11ac9bdd1aad4c4dd7a245742219574e34a1b779d34e0551c29efc64e5",
-          "sha256:aa1727793908ab6cc9dc9be8921e9c06220f7eebe0fd3a4ccc0d2781fe60ff3a"
+          "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558",
+          "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba",
+          "sha256:e58660fcd65b612c49c756d5b88c87936f8881416b8341434d593b3ebf7d1de4",
+          "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882",
+          "sha256:0cb134e69c1ef8767ed92234564d3923b1df32ba5d6032b8a622a9fb96a26108",
+          "sha256:fca1a6538e89d2df9c02688ed027b96f354bc1acd8d70d013bee7b47e142f794",
+          "sha256:9f99247f3cb29e66a849276827a8e78c09b8249ec5ff8a3c89f335ad0009d1ff"
         ]
       },
       "config": {
@@ -2907,13 +2892,13 @@
           "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
         ],
         "Labels": {
-          "org.opencontainers.image.created": "2026-03-08T16:05:21Z",
+          "org.opencontainers.image.created": "2026-05-28T11:57:26Z",
           "org.opencontainers.image.description": "Kubernetes CSI driver node service for high-performance block storage",
-          "org.opencontainers.image.revision": "f83ba3bfba17",
+          "org.opencontainers.image.revision": "cb76a395bba2",
           "org.opencontainers.image.title": "CSI Forca Node",
           "org.opencontainers.image.url": "https://www.datagarden.ru",
           "org.opencontainers.image.vendor": "Datagarden",
-          "org.opencontainers.image.version": "0.1-260308.gf83ba3bfba17"
+          "org.opencontainers.image.version": "1.0.0"
         },
         "User": "65532:65532",
         "WorkingDir": "/csi"
@@ -2922,8 +2907,8 @@
     "Layers": [
       {
         "Size": 327680,
-        "Digest": "sha256:526604835308e0d61f64a3d3e2d614308fef4ed655f0111a4566627296c0195c",
-        "DiffID": "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0"
+        "Digest": "sha256:875ea9878944f3daf508d0e1b87b39ebc1ecce3ccaf3ed11a3cc59f1852a540a",
+        "DiffID": "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245"
       },
       {
         "Size": 40960,
@@ -2931,9 +2916,9 @@
         "DiffID": "sha256:8fa10c0194df9b7c054c90dbe482585f768a54428fc90a5b78a0066a123b1bba"
       },
       {
-        "Size": 2406400,
-        "Digest": "sha256:ef49c20a7b35aa995683f311510d35d77e203a2204f84de14a71a6d726e6af73",
-        "DiffID": "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa"
+        "Size": 2416640,
+        "Digest": "sha256:39dc083afc39bd8dc43d456fe7ff7d39292e593bb2769972c11bb2e5f9119386",
+        "DiffID": "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710"
       },
       {
         "Size": 102400,
@@ -2982,58 +2967,58 @@
       },
       {
         "Size": 13066240,
-        "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-        "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+        "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+        "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
       },
       {
         "Size": 5928960,
-        "Digest": "sha256:13724d053e3111cb832ee8e49539a875afa879595fa76974c70b1981f057a675",
-        "DiffID": "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98"
+        "Digest": "sha256:c3582e9a7cc7ccf68c5467a74e73a794cdb86963e7d055ee49769d09d52bfce8",
+        "DiffID": "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba"
       },
       {
         "Size": 1536,
-        "Digest": "sha256:c2c30719837086e7489df4fefa296ac7b87d7b8e16ba3f3c932e2cd6c0f9ab6b",
-        "DiffID": "sha256:b19dab91f425760e4da92c9400631862b082738230e001dd914c842e451e2401"
+        "Digest": "sha256:c130d44514b1ae91b98b11b9a06539f7b7d1b321dd847af53e009a8a37768d24",
+        "DiffID": "sha256:e58660fcd65b612c49c756d5b88c87936f8881416b8341434d593b3ebf7d1de4"
       },
       {
-        "Size": 14428672,
-        "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-        "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+        "Size": 14490112,
+        "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+        "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
       },
       {
         "Size": 91136,
-        "Digest": "sha256:a87c453e6fb2ce8f33f06ef49387c6bc46d7e1eebdfaefa6fb76a1931d7bc4d0",
-        "DiffID": "sha256:32355a8a4e65be7da0e4b76844483bacaae864a7813e6bdfaedf8e31ffd0a9af"
+        "Digest": "sha256:910e1bb998040f019c95815781744023c7111fec8efb685ac118ab0400f7c813",
+        "DiffID": "sha256:0cb134e69c1ef8767ed92234564d3923b1df32ba5d6032b8a622a9fb96a26108"
       },
       {
-        "Size": 2917888,
-        "Digest": "sha256:0a35c891f03994aea2ae5daa94f357d96733637ea7eea639df4eb612a0ded2de",
-        "DiffID": "sha256:3eaf7c11ac9bdd1aad4c4dd7a245742219574e34a1b779d34e0551c29efc64e5"
+        "Size": 2913792,
+        "Digest": "sha256:56b61e48ee92da6417154c98ee11043a9b665aeb17d9705925f7b16e633c30c6",
+        "DiffID": "sha256:fca1a6538e89d2df9c02688ed027b96f354bc1acd8d70d013bee7b47e142f794"
       },
       {
         "Size": 227840,
-        "Digest": "sha256:3ffdeb2c3c57100b0ef5dc308d072d66ad281cb7559d20ded45ce35bd7538dc7",
-        "DiffID": "sha256:aa1727793908ab6cc9dc9be8921e9c06220f7eebe0fd3a4ccc0d2781fe60ff3a"
+        "Digest": "sha256:4484b41b259f8e6781ec1f4a889b7e8b19d1bce156fad426bd397cd444ac6979",
+        "DiffID": "sha256:9f99247f3cb29e66a849276827a8e78c09b8249ec5ff8a3c89f335ad0009d1ff"
       }
     ]
   },
   "Results": [
     {
-      "Target": "ghcr.io/datagarden-tech/csi-forca-node:1.0.0-rc1 (debian 12.13)",
+      "Target": "ghcr.io/datagarden-tech/csi-forca-node:1.0.0 (debian 12.14)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Packages": [
         {
-          "ID": "base-files@12.4+deb12u13",
+          "ID": "base-files@12.4+deb12u14",
           "Name": "base-files",
           "Identifier": {
-            "PURL": "pkg:deb/debian/base-files@12.4%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "c507a6a7ecfdded2"
+            "PURL": "pkg:deb/debian/base-files@12.4%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "a266728343a98938"
           },
-          "Version": "12.4+deb12u13",
+          "Version": "12.4+deb12u14",
           "Arch": "amd64",
           "SrcName": "base-files",
-          "SrcVersion": "12.4+deb12u13",
+          "SrcVersion": "12.4+deb12u14",
           "Licenses": [
             "GPL-2.0-or-later"
           ],
@@ -3042,8 +3027,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:526604835308e0d61f64a3d3e2d614308fef4ed655f0111a4566627296c0195c",
-            "DiffID": "sha256:a33ba213ad26a605d904a741f67154f3904c74a43182c872c35f36b10fa005e0"
+            "Digest": "sha256:875ea9878944f3daf508d0e1b87b39ebc1ecce3ccaf3ed11a3cc59f1852a540a",
+            "DiffID": "sha256:9ac0db7cd6b389001b18856f7926a18dff7f834c84523445e5030fd753f09245"
           },
           "InstalledFiles": [
             "/usr/lib/os-release",
@@ -3078,18 +3063,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "libc6@2.36-9+deb12u13",
+          "ID": "libc6@2.36-9+deb12u14",
           "Name": "libc6",
           "Identifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
           "Version": "2.36",
-          "Release": "9+deb12u13",
+          "Release": "9+deb12u14",
           "Arch": "amd64",
           "SrcName": "glibc",
           "SrcVersion": "2.36",
-          "SrcRelease": "9+deb12u13",
+          "SrcRelease": "9+deb12u14",
           "Licenses": [
             "LGPL-2.1-only",
             "GPL-2.0-only"
@@ -3099,8 +3084,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "InstalledFiles": [
             "/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
@@ -3391,18 +3376,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "libssl3@3.0.18-1~deb12u2",
+          "ID": "libssl3@3.0.20-1~deb12u1",
           "Name": "libssl3",
           "Identifier": {
-            "PURL": "pkg:deb/debian/libssl3@3.0.18-1~deb12u2?arch=amd64\u0026distro=debian-12.13",
-            "UID": "cf560d0b2ecc8272"
+            "PURL": "pkg:deb/debian/libssl3@3.0.20-1~deb12u1?arch=amd64\u0026distro=debian-12.14",
+            "UID": "216eeef5aac44da"
           },
-          "Version": "3.0.18",
-          "Release": "1~deb12u2",
+          "Version": "3.0.20",
+          "Release": "1~deb12u1",
           "Arch": "amd64",
           "SrcName": "openssl",
-          "SrcVersion": "3.0.18",
-          "SrcRelease": "1~deb12u2",
+          "SrcVersion": "3.0.20",
+          "SrcRelease": "1~deb12u1",
           "Licenses": [
             "Apache-2.0",
             "Artistic-2.0",
@@ -3414,8 +3399,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:13724d053e3111cb832ee8e49539a875afa879595fa76974c70b1981f057a675",
-            "DiffID": "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98"
+            "Digest": "sha256:c3582e9a7cc7ccf68c5467a74e73a794cdb86963e7d055ee49769d09d52bfce8",
+            "DiffID": "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba"
           },
           "InstalledFiles": [
             "/usr/lib/x86_64-linux-gnu/engines-3/afalg.so",
@@ -3434,7 +3419,7 @@
           "ID": "media-types@10.0.0",
           "Name": "media-types",
           "Identifier": {
-            "PURL": "pkg:deb/debian/media-types@10.0.0?arch=all\u0026distro=debian-12.13",
+            "PURL": "pkg:deb/debian/media-types@10.0.0?arch=all\u0026distro=debian-12.14",
             "UID": "d381521693a5ea32"
           },
           "Version": "10.0.0",
@@ -3463,7 +3448,7 @@
           "ID": "netbase@6.4",
           "Name": "netbase",
           "Identifier": {
-            "PURL": "pkg:deb/debian/netbase@6.4?arch=all\u0026distro=debian-12.13",
+            "PURL": "pkg:deb/debian/netbase@6.4?arch=all\u0026distro=debian-12.14",
             "UID": "64adcbea2e4e887c"
           },
           "Version": "6.4",
@@ -3488,18 +3473,18 @@
           "AnalyzedBy": "dpkg"
         },
         {
-          "ID": "tzdata@2025b-0+deb12u2",
+          "ID": "tzdata@2026b-0+deb12u1",
           "Name": "tzdata",
           "Identifier": {
-            "PURL": "pkg:deb/debian/tzdata@2025b-0%2Bdeb12u2?arch=all\u0026distro=debian-12.13",
-            "UID": "a8a72310d4d932e1"
+            "PURL": "pkg:deb/debian/tzdata@2026b-0%2Bdeb12u1?arch=all\u0026distro=debian-12.14",
+            "UID": "cb2f86311583d698"
           },
-          "Version": "2025b",
-          "Release": "0+deb12u2",
+          "Version": "2026b",
+          "Release": "0+deb12u1",
           "Arch": "all",
           "SrcName": "tzdata",
-          "SrcVersion": "2025b",
-          "SrcRelease": "0+deb12u2",
+          "SrcVersion": "2026b",
+          "SrcRelease": "0+deb12u1",
           "Licenses": [
             "public-domain"
           ],
@@ -3508,8 +3493,8 @@
             "Class": "official"
           },
           "Layer": {
-            "Digest": "sha256:ef49c20a7b35aa995683f311510d35d77e203a2204f84de14a71a6d726e6af73",
-            "DiffID": "sha256:4840c7c54023c867f19564429c89ddae4e9589c83dce82492183a7e9f7dab1fa"
+            "Digest": "sha256:39dc083afc39bd8dc43d456fe7ff7d39292e593bb2769972c11bb2e5f9119386",
+            "DiffID": "sha256:35b5ba6e08cdd034b8d1920f9c7203e5d66f258e1915f164a01de0af14f34710"
           },
           "InstalledFiles": [
             "/usr/share/doc/tzdata/README.Debian",
@@ -4423,220 +4408,204 @@
       ],
       "Vulnerabilities": [
         {
-          "VulnerabilityID": "CVE-2026-0861",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "VulnerabilityID": "CVE-2026-5435",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-0861",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5435",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:c19f59b1d2f6aea2892768f12e294dc3bc0a7a6d2982916b35330bf4eca734cb",
-          "Title": "glibc: Integer overflow in memalign leads to heap corruption",
-          "Description": "Passing too large an alignment to the memalign suite of functions (memalign, posix_memalign, aligned_alloc) in the GNU C Library version 2.30 to 2.42 may result in an integer overflow, which could consequently result in a heap corruption.\n\nNote that the attacker must have control over both, the size as well as the alignment arguments of the memalign function to be able to exploit this.  The size parameter must be close enough to PTRDIFF_MAX so as to overflow size_t along with the large alignment argument.  This limits the malicious inputs for the alignment for memalign to the range [1\u003c\u003c62+ 1, 1\u003c\u003c63] and exactly 1\u003c\u003c63 for posix_memalign and aligned_alloc.\n\nTypically the alignment argument passed to such functions is a known constrained quantity (e.g. page size, block size, struct sizes) and is not attacker controlled, because of which this may not be easily exploitable in practice.  An application bug could potentially result in the input alignment being too large, e.g. due to a different buffer overflow or integer overflow in the application or its dependent libraries, but that is again an uncommon usage pattern given typical sources of alignments.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "VendorSeverity": {
-            "alma": 2,
-            "azure": 2,
-            "cbl-mariner": 2,
-            "oracle-oval": 2,
-            "photon": 3,
-            "redhat": 1,
-            "rocky": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 8.1
-            }
-          },
-          "References": [
-            "http://www.openwall.com/lists/oss-security/2026/01/16/5",
-            "https://access.redhat.com/errata/RHSA-2026:2786",
-            "https://access.redhat.com/security/cve/CVE-2026-0861",
-            "https://bugzilla.redhat.com/2429771",
-            "https://bugzilla.redhat.com/2430201",
-            "https://bugzilla.redhat.com/2431196",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2429771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2430201",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0861",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0915",
-            "https://errata.almalinux.org/9/ALSA-2026-2786.html",
-            "https://errata.rockylinux.org/RLSA-2026:1334",
-            "https://linux.oracle.com/cve/CVE-2026-0861.html",
-            "https://linux.oracle.com/errata/ELSA-2026-50120.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-0861",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=33796",
-            "https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=advisories/GLIBC-SA-2026-0001",
-            "https://ubuntu.com/security/notices/USN-8005-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-0861"
-          ],
-          "PublishedDate": "2026-01-14T21:15:52.617Z",
-          "LastModifiedDate": "2026-02-03T18:26:25.39Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2025-15281",
-          "PkgID": "libc6@2.36-9+deb12u13",
-          "PkgName": "libc6",
-          "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
-          },
-          "InstalledVersion": "2.36-9+deb12u13",
-          "Status": "affected",
-          "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-15281",
-          "DataSource": {
-            "ID": "debian",
-            "Name": "Debian Security Tracker",
-            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
-          },
-          "Fingerprint": "sha256:e4c492b57d0e6d3ae2d16b3491e7a75f03375ce22682dfb3cd7cf223d9aa65c9",
-          "Title": "glibc: wordexp with WRDE_REUSE and WRDE_APPEND may return uninitialized memory",
-          "Description": "Calling wordexp with WRDE_REUSE in conjunction with WRDE_APPEND in the GNU C Library version 2.0 to version 2.42 may cause the interface to return uninitialized memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.",
+          "Fingerprint": "sha256:185e55c0a0a247778739fc55f08995b7ad9cb899ee35ab0cefd75cfc0b532f31",
+          "Title": "glibc: glibc: Out-of-bounds write via TSIG record processing",
+          "Description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to enforce the caller-supplied buffer length, and can result in an out-of-bounds write when printing TSIG records.",
           "Severity": "MEDIUM",
           "CweIDs": [
-            "CWE-908"
+            "CWE-787"
           ],
           "VendorSeverity": {
-            "alma": 2,
-            "azure": 2,
-            "oracle-oval": 2,
-            "photon": 3,
-            "redhat": 1,
-            "rocky": 2,
-            "ubuntu": 2
+            "redhat": 2
           },
           "CVSS": {
             "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:H",
               "V3Score": 5.9
             }
           },
           "References": [
-            "http://www.openwall.com/lists/oss-security/2026/01/20/3",
-            "https://access.redhat.com/errata/RHSA-2026:2786",
-            "https://access.redhat.com/security/cve/CVE-2025-15281",
-            "https://bugzilla.redhat.com/2429771",
-            "https://bugzilla.redhat.com/2430201",
-            "https://bugzilla.redhat.com/2431196",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2429771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2430201",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2431196",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-15281",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0861",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0915",
-            "https://errata.almalinux.org/9/ALSA-2026-2786.html",
-            "https://errata.rockylinux.org/RLSA-2026:2786",
-            "https://linux.oracle.com/cve/CVE-2025-15281.html",
-            "https://linux.oracle.com/errata/ELSA-2026-50120.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2025-15281",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=33814",
-            "https://ubuntu.com/security/notices/USN-8005-1",
-            "https://www.cve.org/CVERecord?id=CVE-2025-15281",
-            "https://www.openwall.com/lists/oss-security/2026/01/20/3"
+            "https://access.redhat.com/security/cve/CVE-2026-5435",
+            "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5435",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34033",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5435"
           ],
-          "PublishedDate": "2026-01-20T14:16:07.843Z",
-          "LastModifiedDate": "2026-02-05T17:43:18.63Z"
+          "PublishedDate": "2026-04-28T13:19:22.29Z",
+          "LastModifiedDate": "2026-05-05T17:38:37.03Z"
         },
         {
-          "VulnerabilityID": "CVE-2026-0915",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "VulnerabilityID": "CVE-2026-5450",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-0915",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5450",
           "DataSource": {
             "ID": "debian",
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:ed8d79513598c2b12d13654962a5fc954bc724c5f792349bfcf315326c853fb5",
-          "Title": "glibc: glibc: Information disclosure via zero-valued network query",
-          "Description": "Calling getnetbyaddr or getnetbyaddr_r with a configured nsswitch.conf that specifies the library's DNS backend for networks and queries for a zero-valued network in the GNU C Library version 2.0 to version 2.42 can leak stack contents to the configured DNS resolver.",
+          "Fingerprint": "sha256:52e814cb521016b2ede81f44f8c52afffc24a70ba06c5786823c72d5217768ce",
+          "Title": "glibc: glibc: Heap Buffer Overflow in `scanf` with `%mc` format specifier and large width",
+          "Description": "Calling the scanf family of functions with a %mc (malloc'd character match) in the GNU C Library version 2.7 to version 2.43 with a format width specifier with an explicit width greater than 1024 could result in a one byte heap buffer overflow.",
           "Severity": "MEDIUM",
           "CweIDs": [
-            "CWE-908"
+            "CWE-122",
+            "CWE-787"
           ],
           "VendorSeverity": {
-            "alma": 2,
-            "azure": 1,
-            "cbl-mariner": 2,
-            "oracle-oval": 2,
-            "photon": 3,
-            "redhat": 2,
-            "rocky": 2,
-            "ubuntu": 2
+            "photon": 4,
+            "redhat": 2
           },
           "CVSS": {
             "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-              "V3Score": 5.3
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:L/A:H",
+              "V3Score": 5
             }
           },
           "References": [
-            "http://www.openwall.com/lists/oss-security/2026/01/16/6",
-            "https://access.redhat.com/errata/RHSA-2026:2786",
-            "https://access.redhat.com/security/cve/CVE-2026-0915",
-            "https://bugzilla.redhat.com/2429771",
-            "https://bugzilla.redhat.com/2430201",
-            "https://bugzilla.redhat.com/2431196",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2429771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2430201",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0861",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-0915",
-            "https://errata.almalinux.org/9/ALSA-2026-2786.html",
-            "https://errata.rockylinux.org/RLSA-2026:1334",
-            "https://linux.oracle.com/cve/CVE-2026-0915.html",
-            "https://linux.oracle.com/errata/ELSA-2026-50120.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-0915",
-            "https://sourceware.org/bugzilla/show_bug.cgi?id=33802",
-            "https://ubuntu.com/security/notices/USN-8005-1",
-            "https://www.cve.org/CVERecord?id=CVE-2026-0915",
-            "https://www.openwall.com/lists/oss-security/2026/01/16/6"
+            "https://access.redhat.com/security/cve/CVE-2026-5450",
+            "https://inbox.sourceware.org/libc-announce/b11f0003-6ec1-4bd6-b9de-9e38a4efeca3@redhat.com/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5450",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5450#range-21286997",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=CVE-2026-5450",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5450"
           ],
-          "PublishedDate": "2026-01-15T22:16:12.457Z",
-          "LastModifiedDate": "2026-01-23T19:36:50.73Z"
+          "PublishedDate": "2026-04-20T21:16:36.85Z",
+          "LastModifiedDate": "2026-04-23T15:33:34.277Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-5928",
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgName": "libc6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
+          },
+          "InstalledVersion": "2.36-9+deb12u14",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-5928",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:2f0ef56ca320e660de94cfe1902b078cb48dfb4d89db93b491de82d6df39f595",
+          "Title": "glibc: glibc: Information disclosure or denial of service via ungetwc function with specific wide character encodings",
+          "Description": "Calling the ungetwc function on a FILE stream with wide characters encoded in a character set that has overlaps between its single byte and multi-byte character encodings, in the GNU C Library version 2.43 or earlier, may result in an attempt to read bytes before an allocated buffer, potentially resulting in unintentional disclosure of neighboring data in the heap, or a program crash.\n\nA bug in the wide character pushback implementation (_IO_wdefault_pbackfail in libio/wgenops.c) causes ungetwc() to operate on the regular character buffer (fp-\u003e_IO_read_ptr) instead of the actual wide-stream read pointer (fp-\u003e_wide_data-\u003e_IO_read_ptr). The program crash may happen in cases where fp-\u003e_IO_read_ptr is not initialized and hence points to NULL. The buffer under-read requires a special situation where the input character encoding is such that there are overlaps between single byte representations and multibyte representations in that encoding, resulting in spurious matches. The spurious match case is not possible in the standard Unicode character sets.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-127"
+          ],
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:L/I:N/A:H",
+              "V3Score": 5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-5928",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-5928",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=33998",
+            "https://www.cve.org/CVERecord?id=CVE-2026-5928"
+          ],
+          "PublishedDate": "2026-04-20T21:16:36.963Z",
+          "LastModifiedDate": "2026-04-23T15:33:43.69Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-6238",
+          "PkgID": "libc6@2.36-9+deb12u14",
+          "PkgName": "libc6",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
+          },
+          "InstalledVersion": "2.36-9+deb12u14",
+          "Status": "affected",
+          "Layer": {
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6238",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Fingerprint": "sha256:bd9f8aedb43312f6faa89fce65982d8fefa2fe9dfb0b3212181f48b44bfcbe4c",
+          "Title": "glibc: glibc: Application crash or uninitialized memory read via crafted DNS response",
+          "Description": "The deprecated functions ns_printrrf, ns_printrr and fp_nquery in the GNU C Library version 2.2 and newer fail to validate the RDATA content against the RDATA length in a DNS response when processing LOC, CERT, TKEY or TSIG records, which may allow an attacker to craft a DNS response, causing a target application to crash or read uninitialized memory.\n\nThese functions are for application debugging only and hence not in the path of code executed by the DNS resolver.  Further, they have been deprecated since version 2.34 and should not be used by any new applications.  Applications should consider porting away from these interfaces since they may be removed in future versions.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-6238",
+            "https://inbox.sourceware.org/libc-announce/7a655d55-276f-41fe-b550-feb3ebb2ce91@redhat.com/T/#u",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6238",
+            "https://sourceware.org/bugzilla/show_bug.cgi?id=34069",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6238"
+          ],
+          "PublishedDate": "2026-04-28T19:37:47.523Z",
+          "LastModifiedDate": "2026-05-04T17:57:24.007Z"
         },
         {
           "VulnerabilityID": "CVE-2010-4756",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2010-4756",
@@ -4645,7 +4614,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2de2f8c29c2ea5f35cc649014b9e730d6c01dcaae761ea9f5f66d1c5ccd4427e",
+          "Fingerprint": "sha256:38dcd1fe667ba849af6cf68d34689ff051ed0af5e8da89f19f0af5652e786098",
           "Title": "glibc: glob implementation can cause excessive CPU and memory consumption due to crafted glob expressions",
           "Description": "The glob implementation in the GNU C Library (aka glibc or libc6) allows remote authenticated users to cause a denial of service (CPU and memory consumption) via crafted glob expressions that do not match any pathnames, as demonstrated by glob expressions in STAT commands to an FTP daemon, a different vulnerability than CVE-2010-2632.",
           "Severity": "LOW",
@@ -4679,21 +4648,21 @@
             "https://www.cve.org/CVERecord?id=CVE-2010-4756"
           ],
           "PublishedDate": "2011-03-02T20:00:01.037Z",
-          "LastModifiedDate": "2025-11-03T22:15:41.51Z"
+          "LastModifiedDate": "2026-04-29T01:13:23.04Z"
         },
         {
           "VulnerabilityID": "CVE-2018-20796",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2018-20796",
@@ -4702,7 +4671,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:1b8c6c80d29bcfd0addf001cc18a10935bb6e6052832b7351dcc93f1957a6e9a",
+          "Fingerprint": "sha256:6324d9058082e983c82056987b7386507aa8d8cb95a36c1d61e4395331cccffb",
           "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "Description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
           "Severity": "LOW",
@@ -4742,17 +4711,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010022",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010022",
@@ -4761,7 +4730,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:8615c7ca2ff49cfc0e156a32eee9c66075a6184fb71048060bad7f2fee5661be",
+          "Fingerprint": "sha256:cddbc7d5b5886df2c5b71e36f230a9b144e3884401e91a31e161652935e55033",
           "Title": "glibc: stack guard protection bypass",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass stack guard protection. The component is: nptl. The attack vector is: Exploit stack buffer overflow vulnerability and use this bypass vulnerability to bypass stack guard. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -4794,17 +4763,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010023",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010023",
@@ -4813,7 +4782,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:f0425dd24f01069756150a53652917cc570bfb49aba8c01034642cbc910459fb",
+          "Fingerprint": "sha256:ef404e6ec57e72b9beac8f965b77dbc4c09959b90ae68734d875d846dbd826e7",
           "Title": "glibc: running ldd on malicious ELF leads to code execution because of wrong size computation",
           "Description": "GNU Libc current is affected by: Re-mapping current loaded library with malicious ELF file. The impact is: In worst case attacker may evaluate privileges. The component is: libld. The attack vector is: Attacker sends 2 ELF files to victim and asks to run ldd on it. ldd execute code. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -4849,17 +4818,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010024",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010024",
@@ -4868,7 +4837,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:2ae4d614e05233945d15428246e4c2c361bb417928c85e8887abb56fb0e8041e",
+          "Fingerprint": "sha256:303e15b1e0f25595f8873227b6752559e18d82a31d653d31140f32f88b4e39f1",
           "Title": "glibc: ASLR bypass using cache of thread stack and heap",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may bypass ASLR using cache of thread stack and heap. The component is: glibc. NOTE: Upstream comments indicate \"this is being treated as a non-security bug and no real threat.",
           "Severity": "LOW",
@@ -4908,17 +4877,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-1010025",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-1010025",
@@ -4927,7 +4896,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:bb4beb434771275c533423fe590a7f8dabbf7dcfda1b2640bc3e8b1c97f5f24b",
+          "Fingerprint": "sha256:53a97a395359caa6e56f096e83bc2b1276c208bb07f6d90c9dd83a90b1a95eb4",
           "Title": "glibc: information disclosure of heap addresses of pthread_created thread",
           "Description": "GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may guess the heap addresses of pthread_created thread. The component is: glibc. NOTE: the vendor's position is \"ASLR bypass itself is not a vulnerability.",
           "Severity": "LOW",
@@ -4966,17 +4935,17 @@
         },
         {
           "VulnerabilityID": "CVE-2019-9192",
-          "PkgID": "libc6@2.36-9+deb12u13",
+          "PkgID": "libc6@2.36-9+deb12u14",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u13?arch=amd64\u0026distro=debian-12.13",
-            "UID": "297a3cb99d9e4a6b"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u14?arch=amd64\u0026distro=debian-12.14",
+            "UID": "ce45213e20c3670d"
           },
-          "InstalledVersion": "2.36-9+deb12u13",
+          "InstalledVersion": "2.36-9+deb12u14",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:c65bb0c25578bf8f2a8b87d1996dfd93a5330c03195c8f0401cf88b2e0de9210",
-            "DiffID": "sha256:bd29502adf199ad9c03afba9bc79df572a26ec60a2a6ffdda4883a5b7a1632fe"
+            "Digest": "sha256:235c3625d753c5b8a741210c2e7fb26b47a0d02cf49acc631a38dcf847eedf89",
+            "DiffID": "sha256:99847da578ef1f84f359a90a17b0953d2f96d90438e4bcbbf29f5e571d27b558"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2019-9192",
@@ -4985,7 +4954,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:10caef258cae10996360c1c81e3361cad65b2ba72eb6b03daf9a82f5206edf89",
+          "Fingerprint": "sha256:86792e7fbacfadaae90064aaf13d343ac6c69bc7565093288c05845a26027253",
           "Title": "glibc: uncontrolled recursion in function check_dst_limits_calc_pos_1 in posix/regexec.c",
           "Description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern",
           "Severity": "LOW",
@@ -5022,17 +4991,17 @@
         },
         {
           "VulnerabilityID": "CVE-2025-27587",
-          "PkgID": "libssl3@3.0.18-1~deb12u2",
+          "PkgID": "libssl3@3.0.20-1~deb12u1",
           "PkgName": "libssl3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libssl3@3.0.18-1~deb12u2?arch=amd64\u0026distro=debian-12.13",
-            "UID": "cf560d0b2ecc8272"
+            "PURL": "pkg:deb/debian/libssl3@3.0.20-1~deb12u1?arch=amd64\u0026distro=debian-12.14",
+            "UID": "216eeef5aac44da"
           },
-          "InstalledVersion": "3.0.18-1~deb12u2",
+          "InstalledVersion": "3.0.20-1~deb12u1",
           "Status": "affected",
           "Layer": {
-            "Digest": "sha256:13724d053e3111cb832ee8e49539a875afa879595fa76974c70b1981f057a675",
-            "DiffID": "sha256:51ad86252c685cc9d72891e041d4409dc895ab5b2ebec2bb986044568d77bd98"
+            "Digest": "sha256:c3582e9a7cc7ccf68c5467a74e73a794cdb86963e7d055ee49769d09d52bfce8",
+            "DiffID": "sha256:2821dc8c96f347ebcc2b147d7880755e0c680ac083887926f23c23a67f3443ba"
           },
           "SeveritySource": "debian",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27587",
@@ -5041,7 +5010,7 @@
             "Name": "Debian Security Tracker",
             "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
           },
-          "Fingerprint": "sha256:e2a281106265bc40a874db585b5b13f5bbbe29f82e52ba2b647e5302cc0d7549",
+          "Fingerprint": "sha256:fa7774e140d7beecdd336bd176bb190c991b1211803eed2da6fd9d09151fbbc3",
           "Title": "OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is vulnerable  ...",
           "Description": "OpenSSL 3.0.0 through 3.3.2 on the PowerPC architecture is vulnerable to a Minerva attack, exploitable by measuring the time of signing of random messages using the EVP_DigestSign API, and then using the private key to extract the K value (nonce) from the signatures. Next, based on the bit size of the extracted nonce, one can compare the signing time of full-sized nonces to signatures that used smaller nonces, via statistical tests. There is a side-channel in the P-364 curve that allows private key extraction (also, there is a dependency between the bit size of K and the size of the side channel). NOTE: This CVE is disputed because the OpenSSL security policy explicitly notes that any side channels which require same physical system to be detected are outside of the threat model for the software. The timing signal is so small that it is infeasible to be detected without having the attacking process running on the same physical system.",
           "Severity": "LOW",
@@ -5056,7 +5025,7 @@
             "https://minerva.crocs.fi.muni.cz"
           ],
           "PublishedDate": "2025-06-16T22:15:44.093Z",
-          "LastModifiedDate": "2025-06-26T17:15:30.497Z"
+          "LastModifiedDate": "2026-04-15T00:35:42.02Z"
         }
       ]
     },
@@ -5070,7 +5039,7 @@
           "Name": "datagarden.tech/csi-forca",
           "Identifier": {
             "PURL": "pkg:golang/datagarden.tech/csi-forca",
-            "UID": "55cff645e40920a9"
+            "UID": "de4b7e7e91894b8f"
           },
           "Relationship": "root",
           "DependsOn": [
@@ -5086,32 +5055,32 @@
             "go.uber.org/multierr@v1.10.0",
             "go.uber.org/zap@v1.27.0",
             "go.yaml.in/yaml/v2@v2.4.2",
-            "golang.org/x/net@v0.43.0",
-            "golang.org/x/sys@v0.35.0",
-            "golang.org/x/text@v0.28.0",
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251020155222-88f65dc88635",
-            "google.golang.org/grpc@v1.76.0",
+            "golang.org/x/net@v0.48.0",
+            "golang.org/x/sys@v0.39.0",
+            "golang.org/x/text@v0.32.0",
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
+            "google.golang.org/grpc@v1.79.3",
             "google.golang.org/protobuf@v1.36.10",
-            "stdlib@v1.25.8"
+            "stdlib@v1.25.10"
           ],
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "stdlib@v1.25.8",
+          "ID": "stdlib@v1.25.10",
           "Name": "stdlib",
           "Identifier": {
-            "PURL": "pkg:golang/stdlib@v1.25.8",
-            "UID": "45ef0d75a671a49a"
+            "PURL": "pkg:golang/stdlib@v1.25.10",
+            "UID": "69a23689888d4719"
           },
-          "Version": "v1.25.8",
+          "Version": "v1.25.10",
           "Relationship": "direct",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5124,8 +5093,8 @@
           },
           "Version": "v1.0.1",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5138,8 +5107,8 @@
           },
           "Version": "v2.3.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5152,8 +5121,8 @@
           },
           "Version": "v1.12.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5166,8 +5135,8 @@
           },
           "Version": "v1.6.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5180,8 +5149,8 @@
           },
           "Version": "v0.0.0-20191010083416-a7dc8b61c822",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5194,8 +5163,8 @@
           },
           "Version": "v1.23.2",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5208,8 +5177,8 @@
           },
           "Version": "v0.6.2",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5222,8 +5191,8 @@
           },
           "Version": "v0.66.1",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5236,8 +5205,8 @@
           },
           "Version": "v0.16.1",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5250,8 +5219,8 @@
           },
           "Version": "v1.10.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5264,8 +5233,8 @@
           },
           "Version": "v1.27.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5278,78 +5247,78 @@
           },
           "Version": "v2.4.2",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "golang.org/x/net@v0.43.0",
+          "ID": "golang.org/x/net@v0.48.0",
           "Name": "golang.org/x/net",
           "Identifier": {
-            "PURL": "pkg:golang/golang.org/x/net@v0.43.0",
-            "UID": "72c5e54c97242d2a"
+            "PURL": "pkg:golang/golang.org/x/net@v0.48.0",
+            "UID": "77a863de8281e9a4"
           },
-          "Version": "v0.43.0",
+          "Version": "v0.48.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "golang.org/x/sys@v0.35.0",
+          "ID": "golang.org/x/sys@v0.39.0",
           "Name": "golang.org/x/sys",
           "Identifier": {
-            "PURL": "pkg:golang/golang.org/x/sys@v0.35.0",
-            "UID": "f59edf0ccb131f1b"
+            "PURL": "pkg:golang/golang.org/x/sys@v0.39.0",
+            "UID": "ae36a9faf79c55cf"
           },
-          "Version": "v0.35.0",
+          "Version": "v0.39.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "golang.org/x/text@v0.28.0",
+          "ID": "golang.org/x/text@v0.32.0",
           "Name": "golang.org/x/text",
           "Identifier": {
-            "PURL": "pkg:golang/golang.org/x/text@v0.28.0",
-            "UID": "6ad3766b6e2cf045"
+            "PURL": "pkg:golang/golang.org/x/text@v0.32.0",
+            "UID": "2706d75e6f42d04f"
           },
-          "Version": "v0.28.0",
+          "Version": "v0.32.0",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251020155222-88f65dc88635",
+          "ID": "google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
           "Name": "google.golang.org/genproto/googleapis/rpc",
           "Identifier": {
-            "PURL": "pkg:golang/google.golang.org/genproto/googleapis/rpc@v0.0.0-20251020155222-88f65dc88635",
-            "UID": "2f8eae6832c7d7fe"
+            "PURL": "pkg:golang/google.golang.org/genproto/googleapis/rpc@v0.0.0-20251202230838-ff82c1b0f217",
+            "UID": "c26efb79c92fdb03"
           },
-          "Version": "v0.0.0-20251020155222-88f65dc88635",
+          "Version": "v0.0.0-20251202230838-ff82c1b0f217",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
         {
-          "ID": "google.golang.org/grpc@v1.76.0",
+          "ID": "google.golang.org/grpc@v1.79.3",
           "Name": "google.golang.org/grpc",
           "Identifier": {
-            "PURL": "pkg:golang/google.golang.org/grpc@v1.76.0",
-            "UID": "abbdb1621b413f17"
+            "PURL": "pkg:golang/google.golang.org/grpc@v1.79.3",
+            "UID": "4ffa76705471953"
           },
-          "Version": "v1.76.0",
+          "Version": "v1.79.3",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         },
@@ -5362,8 +5331,8 @@
           },
           "Version": "v1.36.10",
           "Layer": {
-            "Digest": "sha256:6e470d06151aea1c7b0dfd3ce46bfe69690b94174fc28c050274ca13f4ca3b60",
-            "DiffID": "sha256:571642eae24607bdf5ea8809452231dcf7d8c07a666e311286761b3c925e6028"
+            "Digest": "sha256:79ef72728c2d3797184216af665123f1dfd590b0fa7bc76bc022706bff5a56e3",
+            "DiffID": "sha256:7df1ff23d232797eee9a26a607cdbb40dc75dfbeae3d7299fd5ef5c8c5617882"
           },
           "AnalyzedBy": "gobinary"
         }

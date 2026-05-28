@@ -1,4 +1,4 @@
-![Kubernetes](https://img.shields.io/badge/Kubernetes-1.28%20%7C%201.29%20%7C%201.31-326ce5)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1.28%20%7C%201.29%20%7C%201.30%20%7C%201.31-326ce5)
 ![CSI](https://img.shields.io/badge/CSI-1.9+-yellow)
 
 # csi-forca
@@ -7,7 +7,7 @@
 
 * **Volume modes:** Filesystem (ext4, xfs) and Raw Block — RWO
 * **Attach model:** Skip-Attach (`CSIDriver.spec.attachRequired=false`)
-* **Kubernetes:** 1.28 · 1.29 · 1.31
+* **Kubernetes:** 1.28 · 1.29 · 1.30 · 1.31
 * **CSI spec:** 1.9+
 
 The CSI driver integrates Kubernetes with the Vitiscale storage system and enables dynamic provisioning and management of persistent volumes backed by Vitiscale NVMe/TCP storage.
@@ -18,7 +18,7 @@ The CSI driver integrates Kubernetes with the Vitiscale storage system and enabl
 
 ```bash
 # Kubernetes 1.29 — apply the latest release bundle
-kubectl apply -f releases/1.0.0-rc1/deploy-1.29.yaml
+kubectl apply -f releases/1.0.0/deploy-1.29.yaml
 
 # Then apply a StorageClass (choose one)
 kubectl apply -f deploy/samples/storageclass-fs-rwo.yaml    # ext4 filesystem
@@ -47,7 +47,7 @@ See `CHANGELOG.md` for the current release tag and version notes.
 Each release publishes signed, scanned deployment bundles under `releases/<version>/`.
 
 ```bash
-VERSION=1.0.0-rc1
+VERSION=1.0.0
 
 # Kubernetes 1.28
 kubectl apply -f releases/${VERSION}/deploy-1.28.yaml
@@ -58,6 +58,8 @@ kubectl apply -f releases/${VERSION}/deploy-1.29.yaml
 # Kubernetes 1.31
 kubectl apply -f releases/${VERSION}/deploy-1.31.yaml
 ```
+
+> **Kubernetes 1.30:** Runtime-validated on 1.30.14 using the test-cluster overlay. There is no dedicated `deploy-1.30.yaml` release bundle; use `deploy-1.29.yaml` for the closest supported configuration.
 
 ### Option B — Convenience bundle from dist/
 
@@ -103,18 +105,18 @@ releases/<version>/
 ├── scan-report.txt           Vulnerability scan report — human-readable (Trivy)
 ├── scan-report.json          Vulnerability scan report — machine-readable JSON (Trivy)
 ├── cosign.pub                Public key for Cosign signature verification
-├── RC1-VALIDATION.md         Validation summary — tested capabilities, scope, known limitations
+├── VALIDATION.md             Validation summary — tested capabilities, scope, known limitations
 └── signatures/               Offline signature bundles (may be empty; signatures are in the OCI registry)
     ├── csi-forca-controller.sig
     └── csi-forca-node.sig
 ```
 
-Each release directory includes a validation summary (`RC1-VALIDATION.md`) describing what was tested, what is in scope, and known limitations for that release.
+Each release directory includes a validation summary describing what was tested, scope, and known limitations for that release.
 
 **Verify a container image signature:**
 
 ```bash
-VERSION=1.0.0-rc1
+VERSION=1.0.0
 cosign verify \
   --key releases/${VERSION}/cosign.pub \
   ghcr.io/datagarden-tech/csi-forca-controller@<digest>
