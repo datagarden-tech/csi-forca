@@ -42,7 +42,7 @@ spec:
       containers:
         # Main CSI controller service (product name: csi-forca)
         - name: csi-forca-controller
-          image: ghcr.io/datagarden-tech/csi-forca-controller:0.1-260308.gf83ba3bfba17
+          image: ghcr.io/datagarden-tech/csi-forca-controller:1.0.1
           imagePullPolicy: IfNotPresent
           args:
             - --endpoint=$(CSI_ENDPOINT)

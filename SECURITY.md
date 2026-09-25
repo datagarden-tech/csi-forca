@@ -19,7 +19,8 @@ For general licensing or commercial inquiries, contact: info@datagarden.tech
 
 | Release | Status |
 |---------|--------|
-| 1.0.0 | Supported (current) |
+| 1.0.1 | Supported (current) |
+| 1.0.0 | Superseded; upgrade to 1.0.1 |
 
 Only the most recent release receives security fixes.
 Older releases are not patched.
@@ -39,7 +40,7 @@ releases/<version>/cosign.pub
 ### Verify a container image
 
 ```bash
-VERSION=1.0.0
+VERSION=1.0.1
 
 cosign verify \
   --key releases/${VERSION}/cosign.pub \

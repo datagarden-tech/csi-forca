@@ -7,7 +7,7 @@ kind: Kustomization
 # - Room for future VolumeAttributesClass integration (1.31+)
 
 resources:
-  - ../../base
+  - ../vitiscale
 
 namePrefix: ""
 nameSuffix: ""

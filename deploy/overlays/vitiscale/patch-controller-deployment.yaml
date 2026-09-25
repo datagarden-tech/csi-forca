@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csi-forca-controller
+spec:
+  template:
+    spec:
+      containers:
+        - name: csi-forca-controller
+          env:
+            - name: CSI_FORCA_BACKEND
+              value: "vitiscale"
+            - name: ENABLE_PROVISIONING
+              value: "true"
+            - name: VITISCALE_API_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  name: vitiscale-credentials
+                  key: endpoint
+            - name: VITISCALE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: vitiscale-credentials
+                  key: username
+                  optional: true
+            - name: VITISCALE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: vitiscale-credentials
+                  key: password
+                  optional: true
+            - name: VITISCALE_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: vitiscale-credentials
+                  key: api-token
+                  optional: true

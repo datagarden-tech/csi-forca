@@ -7,7 +7,7 @@ kind: Kustomization
 # - No additional features enabled in v0.1
 
 resources:
-  - ../../base
+  - ../vitiscale
 
 namePrefix: ""
 nameSuffix: ""

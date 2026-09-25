@@ -17,8 +17,16 @@ The CSI driver integrates Kubernetes with the Vitiscale storage system and enabl
 ## Quick Start
 
 ```bash
+# Create the credentials before the driver pods are started
+kubectl create namespace csi-forca-system
+# Use the Vitiscale base URL; do not append /api.
+kubectl -n csi-forca-system create secret generic vitiscale-credentials \
+  --from-literal=endpoint="https://vitiscale.example.com" \
+  --from-literal=username="YOUR_USERNAME" \
+  --from-literal=password="YOUR_PASSWORD"
+
 # Kubernetes 1.29 — apply the latest release bundle
-kubectl apply -f releases/1.0.0/deploy-1.29.yaml
+kubectl apply -f releases/1.0.1/deploy-1.29.yaml
 
 # Then apply a StorageClass (choose one)
 kubectl apply -f deploy/samples/storageclass-fs-rwo.yaml    # ext4 filesystem
@@ -47,7 +55,7 @@ See `CHANGELOG.md` for the current release tag and version notes.
 Each release publishes signed, scanned deployment bundles under `releases/<version>/`.
 
 ```bash
-VERSION=1.0.0
+VERSION=1.0.1
 
 # Kubernetes 1.28
 kubectl apply -f releases/${VERSION}/deploy-1.28.yaml
@@ -85,8 +93,19 @@ Sample StorageClass definitions are in `deploy/samples/`:
 * `storageclass-block-rwo.yaml` — raw block volumes
 
 The driver requires a `vitiscale-credentials` Secret in the `csi-forca-system` namespace with the
-Vitiscale REST API endpoint and authentication credentials. Refer to the `deploy/overlays/` manifests
-for the expected secret structure.
+Vitiscale REST API endpoint and authentication credentials. Create it before applying a release
+bundle or a Kubernetes-version overlay. The `endpoint` value is the base URL; do not append `/api`,
+because the driver adds API paths such as `/api/auth/login`:
+
+```bash
+kubectl -n csi-forca-system create secret generic vitiscale-credentials \
+  --from-literal=endpoint="https://vitiscale.example.com" \
+  --from-literal=username="YOUR_USERNAME" \
+  --from-literal=password="YOUR_PASSWORD"
+```
+
+Token authentication is also supported by setting `api-token` instead of `username` and `password`.
+See `deploy/samples/secret-vitiscale-credentials.example.yaml` for the complete template.
 
 ---
 
@@ -116,7 +135,7 @@ Each release directory includes a validation summary describing what was tested,
 **Verify a container image signature:**
 
 ```bash
-VERSION=1.0.0
+VERSION=1.0.1
 cosign verify \
   --key releases/${VERSION}/cosign.pub \
   ghcr.io/datagarden-tech/csi-forca-controller@<digest>
@@ -145,4 +164,3 @@ The public repository contains only installation manifests, release artifacts, a
 All development and internal documentation are maintained in the upstream private source repository.
 
 If you submit a pull request, you agree that the contribution may be used by Datagarden without restriction as part of Datagarden software.
-

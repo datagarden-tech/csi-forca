@@ -7,7 +7,7 @@ kind: Kustomization
 # - CSIDriver uses storage.k8s.io/v1 (stable in 1.19+)
 
 resources:
-  - ../../base
+  - ../vitiscale
 
 namePrefix: ""
 nameSuffix: ""

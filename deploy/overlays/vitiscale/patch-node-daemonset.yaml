@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: csi-forca-node
+spec:
+  template:
+    spec:
+      containers:
+        - name: csi-forca-node
+          env:
+            - name: CSI_FORCA_BACKEND
+              value: "vitiscale"
+            - name: CSI_NVME_EXEC_MODE
+              value: "auto"
+          volumeMounts:
+            - name: csi-forca-state
+              mountPath: /var/lib/csi-forca
+      volumes:
+        - name: csi-forca-state
+          hostPath:
+            path: /var/lib/csi-forca
+            type: DirectoryOrCreate

@@ -4,6 +4,39 @@ This file records notable changes per release. Format: [Keep a Changelog](https:
 
 ---
 
+## [1.0.1] — 2026-09-25
+
+Patch release correcting the public production deployment path.
+
+### Fixed
+
+- Release bundles now select the `vitiscale` backend for controller and node pods.
+- Dynamic provisioning is enabled in production bundles.
+- Vitiscale endpoint and credentials are injected from `vitiscale-credentials`.
+- Username/password and API-token authentication are both supported.
+- Node NVMe connection state persists under `/var/lib/csi-forca` across pod restarts.
+- Base Deployment and DaemonSet no longer reference pre-release `0.1-*` images.
+- Unused cluster-wide Secret read permissions are absent from regenerated bundles.
+- Updated `golang.org/x/net`, `golang.org/x/text`, and `google.golang.org/grpc`
+  to patched versions required by the release vulnerability gate.
+- Updated `google.golang.org/grpc` to v1.83.2 to remediate
+  CVE-2026-84445 (HIGH, denial of service in gRPC-Go xDS servers).
+- The E2E smoke test now creates its required StorageClass and limits forced PV
+  cleanup to its own claim instead of every PV managed by the driver.
+- Vitiscale endpoint examples now state that configuration requires the base
+  URL without a trailing `/api`.
+
+### Distribution
+
+- Added a public reusable `deploy/overlays/vitiscale` production layer.
+- Added a public credentials Secret example and explicit setup instructions.
+- Added a CI manifest contract that rejects bundles which fall back to `devmem`, disable provisioning, or contain stale driver images.
+- Release vulnerability scans and Docker binary smoke checks now fail the build
+  instead of allowing a failed check to continue.
+- The internal test-cluster overlay now selects the `1.0.1` release images.
+
+---
+
 ## [1.0.0] — 2026-05-28
 
 General Availability release. GA gate cleared.

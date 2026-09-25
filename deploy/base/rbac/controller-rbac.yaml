@@ -42,10 +42,6 @@ rules:
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["create", "patch", "update"]
-  # Secrets (for future connection credentials from StorageClass)
-  - apiGroups: [""]
-    resources: ["secrets"]
-    verbs: ["get", "list"]
   # Leader election (external-provisioner)
   - apiGroups: ["coordination.k8s.io"]
     resources: ["leases"]
