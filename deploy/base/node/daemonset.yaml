@@ -70,12 +70,8 @@ spec:
           hostPath:
             path: /var/lib/kubelet
             type: Directory
-        # CSI plugins directory (for socket registration)
-        - name: plugins-dir
-          hostPath:
-            path: /var/lib/kubelet/plugins
-            type: DirectoryOrCreate
-        # CSI driver registrar socket
+        # Kubelet plugin registration directory (node-driver-registrar only, at
+        # /registration). Not mounted into the main container: see below.
         - name: registry-dir
           hostPath:
             path: /var/lib/kubelet/plugins_registry
@@ -103,7 +99,7 @@ spec:
       containers:
         # Main CSI node plugin (privileged for nsenter and mount operations; product name: csi-forca)
         - name: csi-forca-node
-          image: ghcr.io/datagarden-tech/csi-forca-node:1.0.1
+          image: ghcr.io/datagarden-tech/csi-forca-node:1.1.0
           imagePullPolicy: IfNotPresent
           args:
             - --endpoint=$(CSI_ENDPOINT)
@@ -126,14 +122,14 @@ spec:
           volumeMounts:
             - name: csi-socket
               mountPath: /csi
+            # Single Bidirectional kubelet mount; plugins/ and plugins_registry/
+            # are reachable through it. Do NOT add nested mounts under
+            # /var/lib/kubelet here: a mount created inside this shared parent at
+            # container start propagates back to the host peer group and stacks
+            # (observed 31→63 layers per path per rollout; ADR-0012 2026-10-21).
             - name: kubelet-dir
               mountPath: /var/lib/kubelet
               mountPropagation: Bidirectional
-            - name: plugins-dir
-              mountPath: /var/lib/kubelet/plugins
-              mountPropagation: Bidirectional
-            - name: registry-dir
-              mountPath: /var/lib/kubelet/plugins_registry
             - name: dev
               mountPath: /dev
             - name: sys
@@ -159,7 +155,8 @@ spec:
             capabilities:
               add:
                 - SYS_ADMIN
-        # node-driver-registrar sidecar (non-privileged)
+        # node-driver-registrar needs root to access kubelet's host-owned
+        # plugins_registry directory; it remains non-privileged.
         - name: node-driver-registrar
           image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.13.0
           imagePullPolicy: IfNotPresent
@@ -185,9 +182,9 @@ spec:
               cpu: 100m
               memory: 128Mi
           securityContext:
-            runAsNonRoot: true
-            runAsUser: 65532
-            runAsGroup: 65532
+            runAsNonRoot: false
+            runAsUser: 0
+            runAsGroup: 0
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: true
             capabilities:

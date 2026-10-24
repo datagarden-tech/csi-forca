@@ -12,6 +12,8 @@ spec:
               value: "vitiscale"
             - name: CSI_NVME_EXEC_MODE
               value: "auto"
+            - name: NVME_RDMA_IO_QUEUES
+              value: "16"
           volumeMounts:
             - name: csi-forca-state
               mountPath: /var/lib/csi-forca

@@ -4,6 +4,62 @@ This file records notable changes per release. Format: [Keep a Changelog](https:
 
 ---
 
+## [Unreleased]
+
+## [1.1.0] — 2026-10-24
+
+### Added
+
+- Added opt-in NVMe/RDMA transport selection while retaining NVMe/TCP as the default.
+- Added transport-aware Vitiscale target-protocol validation and an NVMe/RDMA StorageClass sample.
+- Added a namespace-safe, identity-checked NVMe device-path fallback for concurrent volumes.
+
+### Fixed
+
+- Corrected repeated publication handling without treating unrelated backend errors as success.
+- Implemented supported `ValidateVolumeCapabilities` behavior and corrected `ListVolumes`
+  pagination and invalid-token error mapping for applicable CSI-sanity tests.
+- Preserved mounted filesystems during device preparation and respected the backend minimum
+  volume size when CSI capacity is omitted.
+- Bounded active-task `DeleteVolume` retries and authentication refresh by caller context.
+- Updated the release build toolchain to Go 1.26.10 and `golang.org/x/net` to v0.60.0
+  after the 2026-10-23 vulnerability scan found HIGH issues in the older versions.
+- Pinned the local Go toolchain selection to 1.26.10 in `go.mod`.
+- Moved both runtime images to Debian 13 distroless and pinned the `nsenter`
+  extraction stage to Debian 13 to address the OpenSSL finding in Debian 12.
+- Fixed the production node registrar security context so it can access the
+  kubelet registration socket on hosts with root-owned `plugins_registry`.
+- Set the Vitiscale production bundle to 16 NVMe/RDMA I/O queues per portal,
+  matching the validated hardware matrix and avoiding the host's 127-queue
+  default observed during release-bundle testing.
+
+### Changed
+
+- Adopted a rolling Kubernetes support window covering the latest three upstream-supported
+  minor releases (`N/N-1/N-2`) as the default policy.
+- Added a dependency-constrained exception for csi-forca 1.1.0: the release matrix is
+  Kubernetes 1.34/1.35/1.36, with 1.37 deferred until a reviewed CNI combination is available.
+- Defined risk-based release validation: full hardware E2E on the selected boundary minors,
+  runtime smoke on the middle minor, with reduced patch-release matrices only when
+  justified by change scope.
+- The 1.1.x release format moves to one universal production deployment bundle; 1.0.x
+  version-specific bundles remain immutable legacy artifacts.
+- `dist/deploy.yaml` is rendered from `deploy/overlays/vitiscale`; `app.kubernetes.io/version`
+  now carries the driver version and is excluded from selectors. Installations created from a
+  1.0.x `deploy-<k8s>.yaml` bundle must recreate the controller Deployment and node DaemonSet
+  when moving to 1.1.x because their selectors contained the Kubernetes version.
+- The `k8s-1-28`, `k8s-1-29`, and `k8s-1-31` overlays and `dist/deploy-*.yaml` are no longer
+  rendered or exported.
+- Current-image validation passed the full 1.34 and 1.36 Vitiscale lifecycle campaigns,
+  the 1.35 runtime smoke, and four applicable CSI-sanity profiles on 1.36. See
+  [VALIDATION.md](releases/1.1.0/VALIDATION.md) for exact images, versions, historical
+  failures, and remaining release gates.
+- Rotated the 1.1.0 Cosign signing key before publication after finding older
+  copies of the prior key with uncertain custody. Verify 1.1.0 images with
+  `releases/1.1.0/cosign.pub`; historical 1.0.x keys remain versioned.
+
+---
+
 ## [1.0.1] — 2026-09-25
 
 Patch release correcting the public production deployment path.

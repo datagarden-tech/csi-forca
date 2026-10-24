@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-system
 ---
 apiVersion: v1
@@ -17,7 +17,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-controller
   namespace: csi-forca-system
 ---
@@ -29,7 +29,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-node
   namespace: csi-forca-system
 ---
@@ -41,7 +41,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-controller
 rules:
 - apiGroups:
@@ -125,7 +125,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-node
 rules:
 - apiGroups:
@@ -151,7 +151,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-controller
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -170,7 +170,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-node
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -190,7 +190,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-controller-metrics
   namespace: csi-forca-system
 spec:
@@ -205,7 +205,6 @@ spec:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
   type: ClusterIP
 ---
 apiVersion: v1
@@ -217,7 +216,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-node-metrics
   namespace: csi-forca-system
 spec:
@@ -233,7 +232,6 @@ spec:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -244,7 +242,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-controller
   namespace: csi-forca-system
 spec:
@@ -256,7 +254,6 @@ spec:
       app.kubernetes.io/managed-by: kustomize
       app.kubernetes.io/name: csi-forca
       app.kubernetes.io/part-of: csi-forca
-      app.kubernetes.io/version: "1.28"
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -270,7 +267,7 @@ spec:
         app.kubernetes.io/managed-by: kustomize
         app.kubernetes.io/name: csi-forca
         app.kubernetes.io/part-of: csi-forca
-        app.kubernetes.io/version: "1.28"
+        app.kubernetes.io/version: 1.1.0
     spec:
       containers:
       - args:
@@ -309,7 +306,7 @@ spec:
           value: csi.forca.datagarden.tech
         - name: CSI_ENDPOINT
           value: unix:///csi/csi.sock
-        image: ghcr.io/datagarden-tech/csi-forca-controller:1.0.1
+        image: ghcr.io/datagarden-tech/csi-forca-controller:1.1.0
         imagePullPolicy: IfNotPresent
         name: csi-forca-controller
         ports:
@@ -355,7 +352,7 @@ spec:
         name: external-provisioner
         ports:
         - containerPort: 9801
-          name: metrics
+          name: prov-metrics
           protocol: TCP
         resources:
           limits:
@@ -421,7 +418,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-controller
   namespace: csi-forca-system
 spec:
@@ -433,7 +430,6 @@ spec:
       app.kubernetes.io/managed-by: kustomize
       app.kubernetes.io/name: csi-forca
       app.kubernetes.io/part-of: csi-forca
-      app.kubernetes.io/version: "1.28"
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -444,7 +440,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi-forca-node
   namespace: csi-forca-system
 spec:
@@ -455,7 +451,6 @@ spec:
       app.kubernetes.io/managed-by: kustomize
       app.kubernetes.io/name: csi-forca
       app.kubernetes.io/part-of: csi-forca
-      app.kubernetes.io/version: "1.28"
   template:
     metadata:
       labels:
@@ -464,7 +459,7 @@ spec:
         app.kubernetes.io/managed-by: kustomize
         app.kubernetes.io/name: csi-forca
         app.kubernetes.io/part-of: csi-forca
-        app.kubernetes.io/version: "1.28"
+        app.kubernetes.io/version: 1.1.0
     spec:
       containers:
       - args:
@@ -477,6 +472,8 @@ spec:
           value: vitiscale
         - name: CSI_NVME_EXEC_MODE
           value: auto
+        - name: NVME_RDMA_IO_QUEUES
+          value: "16"
         - name: CSI_ENDPOINT
           value: unix:///csi/csi.sock
         - name: KUBELET_DIR
@@ -485,7 +482,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
-        image: ghcr.io/datagarden-tech/csi-forca-node:1.0.1
+        image: ghcr.io/datagarden-tech/csi-forca-node:1.1.0
         imagePullPolicy: IfNotPresent
         name: csi-forca-node
         ports:
@@ -515,11 +512,6 @@ spec:
         - mountPath: /var/lib/kubelet
           mountPropagation: Bidirectional
           name: kubelet-dir
-        - mountPath: /var/lib/kubelet/plugins
-          mountPropagation: Bidirectional
-          name: plugins-dir
-        - mountPath: /var/lib/kubelet/plugins_registry
-          name: registry-dir
         - mountPath: /dev
           name: dev
         - mountPath: /sys
@@ -554,9 +546,9 @@ spec:
             drop:
             - ALL
           readOnlyRootFilesystem: true
-          runAsGroup: 65532
-          runAsNonRoot: true
-          runAsUser: 65532
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
         volumeMounts:
         - mountPath: /csi
           name: csi-socket
@@ -636,10 +628,6 @@ spec:
           type: Directory
         name: kubelet-dir
       - hostPath:
-          path: /var/lib/kubelet/plugins
-          type: DirectoryOrCreate
-        name: plugins-dir
-      - hostPath:
           path: /var/lib/kubelet/plugins_registry
           type: Directory
         name: registry-dir
@@ -671,7 +659,7 @@ metadata:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: csi-forca
     app.kubernetes.io/part-of: csi-forca
-    app.kubernetes.io/version: "1.28"
+    app.kubernetes.io/version: 1.1.0
   name: csi.forca.datagarden.tech
 spec:
   attachRequired: false

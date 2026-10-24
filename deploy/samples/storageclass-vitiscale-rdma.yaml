@@ -1,0 +1,35 @@
+# Sample: opt-in NVMe/RDMA StorageClass (target 1.1.0; see ADR-0016).
+#
+# PREREQUISITES (RDMA is NOT required for default NVMe/TCP deployments):
+#   - A pre-provisioned Vitiscale target whose protocol is NVMF_RDMA, named below
+#     via vitiscale.targetName. The driver validates the target protocol against the
+#     requested transport and fails CreateVolume if they do not match.
+#   - Worker nodes that will run RDMA-backed pods must have the nvme_rdma kernel module
+#     loaded and an RDMA-capable NIC. The nvme_rdma module is only required on nodes that
+#     actually publish RDMA volumes; TCP-only nodes are unaffected.
+#   - Native NVMe multipath (nvme_core.multipath=Y) is required for both transports.
+#
+# If nvme_rdma is not loaded on the target node, NodePublishVolume fails and the node
+# log reports that the nvme_rdma module is not loaded. See docs/OPERATIONS.md.
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: csi-forca-vitiscale-rdma
+  labels:
+    app.kubernetes.io/name: csi-forca
+# CSI driver identity (same driver as NVMe/TCP — transport is a data-plane detail)
+provisioner: csi.forca.datagarden.tech
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+# Volume expansion/resize is not supported by the driver or Vitiscale in the current scope.
+allowVolumeExpansion: false
+parameters:
+  # Name of an existing Vitiscale target with protocol NVMF_RDMA.
+  vitiscale.targetName: nvme-rdma
+  # Opt in to NVMe/RDMA. Omit this key (or set "tcp") for the default NVMe/TCP transport.
+  vitiscale.transport: rdma
+  csi.storage.k8s.io/fstype: ext4
+  # Filesystem initialization policy.
+  # "safe" (default): never destroys existing filesystem data; returns FailedPrecondition
+  # on type mismatch or detected corruption.
+  csi.forca.datagarden.tech/mkfsPolicy: "safe"

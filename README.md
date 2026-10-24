@@ -1,13 +1,14 @@
-![Kubernetes](https://img.shields.io/badge/Kubernetes-1.28%20%7C%201.29%20%7C%201.30%20%7C%201.31-326ce5)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1.34%20%7C%201.35%20%7C%201.36-326ce5)
 ![CSI](https://img.shields.io/badge/CSI-1.9+-yellow)
 
 # csi-forca
 
-**csi-forca** is a Kubernetes CSI driver for the Vitiscale NVMe/TCP block storage platform by Datagarden.
+**csi-forca** is a Kubernetes CSI driver for the Vitiscale block storage platform by Datagarden.
 
 * **Volume modes:** Filesystem (ext4, xfs) and Raw Block — RWO
 * **Attach model:** Skip-Attach (`CSIDriver.spec.attachRequired=false`)
-* **Kubernetes:** 1.28 · 1.29 · 1.30 · 1.31
+* **1.1.0 Kubernetes matrix:** 1.34 · 1.35 · 1.36; dependency-constrained per ADR-0018
+* **Transport:** NVMe/TCP by default; NVMe/RDMA is opt-in
 * **CSI spec:** 1.9+
 
 The CSI driver integrates Kubernetes with the Vitiscale storage system and enables dynamic provisioning and management of persistent volumes backed by Vitiscale NVMe/TCP storage.
@@ -25,15 +26,15 @@ kubectl -n csi-forca-system create secret generic vitiscale-credentials \
   --from-literal=username="YOUR_USERNAME" \
   --from-literal=password="YOUR_PASSWORD"
 
-# Kubernetes 1.29 — apply the latest release bundle
-kubectl apply -f releases/1.0.1/deploy-1.29.yaml
+# Apply the universal 1.1.x release bundle
+kubectl apply -f releases/1.1.0/deploy.yaml
 
 # Then apply a StorageClass (choose one)
 kubectl apply -f deploy/samples/storageclass-fs-rwo.yaml    # ext4 filesystem
 kubectl apply -f deploy/samples/storageclass-block-rwo.yaml # raw block
 ```
 
-See [Installation](#installation) below for all supported Kubernetes versions and install options.
+See [Installation](#installation) below for the support policy and install options.
 
 ---
 
@@ -50,40 +51,49 @@ See `CHANGELOG.md` for the current release tag and version notes.
 
 ## Installation
 
+The detailed Russian installation guide is available from the maintainers
+on request. The versioned deployment bundle and verification artifacts are
+included in each release.
+
 ### Option A — Versioned release bundle (recommended)
 
-Each release publishes signed, scanned deployment bundles under `releases/<version>/`.
+Each 1.1.x release publishes one deployment bundle under `releases/<version>/`
+and signed, scanned container images in GHCR. The same bundle is used throughout
+the selected Kubernetes project matrix.
+
+The versioned bundle is the install source after publication. The public
+validation summary identifies the exact tested images and supported scope.
 
 ```bash
-VERSION=1.0.1
-
-# Kubernetes 1.28
-kubectl apply -f releases/${VERSION}/deploy-1.28.yaml
-
-# Kubernetes 1.29
-kubectl apply -f releases/${VERSION}/deploy-1.29.yaml
-
-# Kubernetes 1.31
-kubectl apply -f releases/${VERSION}/deploy-1.31.yaml
+VERSION=1.1.0
+kubectl apply -f releases/${VERSION}/deploy.yaml
 ```
 
-> **Kubernetes 1.30:** Runtime-validated on 1.30.14 using the test-cluster overlay. There is no dedicated `deploy-1.30.yaml` release bundle; use `deploy-1.29.yaml` for the closest supported configuration.
+The default policy selects the latest three upstream-supported Kubernetes minors. For 1.1.0,
+the project-supported matrix is 1.34–1.36 because the hardware test environment uses Calico
+3.32, whose active Kubernetes test matrix stops at 1.36. Kubernetes 1.37 is deferred. Exact
+patch versions, upstream lifecycle status, and test depth are published in the release
+`VALIDATION.md`. Kubernetes 1.28–1.31 were validated for 1.0.x and are now legacy/best-effort;
+their original versioned bundles remain in the corresponding immutable 1.0.x release directory.
 
 ### Option B — Convenience bundle from dist/
 
-`dist/deploy-*.yaml` contains the same bundles as the latest export and is updated with each repository push. Use this only for evaluation or when a specific versioned release is not required.
+`dist/deploy.yaml` contains a convenience copy of the current universal bundle and is updated
+with each repository export. Use it only for evaluation or when a versioned release is not
+required.
 
 ```bash
-kubectl apply -f dist/deploy-1.29.yaml
+kubectl apply -f dist/deploy.yaml
 ```
 
 ### Option C — Kustomize overlay
 
 ```bash
-kubectl apply -k deploy/overlays/k8s-1-29
+kubectl apply -k deploy/overlays/vitiscale
 ```
 
-Base manifests are in `deploy/base/`. Version-specific overlays are in `deploy/overlays/k8s-<version>/`.
+Base manifests are in `deploy/base/`. A version-specific overlay is created only when Kubernetes
+API or runtime behavior actually differs across the selected support matrix.
 
 ### StorageClass samples
 
@@ -115,9 +125,7 @@ Each release publishes a versioned artifact directory:
 
 ```
 releases/<version>/
-├── deploy-1.28.yaml          Deployment bundle — Kubernetes 1.28
-├── deploy-1.29.yaml          Deployment bundle — Kubernetes 1.29
-├── deploy-1.31.yaml          Deployment bundle — Kubernetes 1.31
+├── deploy.yaml               Universal production deployment bundle
 ├── image-digests.txt         sha256 digests for controller and node images
 ├── sbom-controller.spdx.json SBOM for the controller image (SPDX)
 ├── sbom-node.spdx.json       SBOM for the node image (SPDX)
@@ -135,7 +143,7 @@ Each release directory includes a validation summary describing what was tested,
 **Verify a container image signature:**
 
 ```bash
-VERSION=1.0.1
+VERSION=1.1.0
 cosign verify \
   --key releases/${VERSION}/cosign.pub \
   ghcr.io/datagarden-tech/csi-forca-controller@<digest>

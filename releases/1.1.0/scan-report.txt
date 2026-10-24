@@ -1,0 +1,44 @@
+# Trivy vulnerability scan — 1.1.0
+# Generated: 2026-10-23T17:42:17Z
+# Scanner: Trivy 0.69.3; DB updated 2026-10-23T13:13:41Z
+# Mode: docker-save archive, offline vulnerability scan
+# Gate: HIGH/CRITICAL findings = 0; table filters to HIGH/CRITICAL
+# Source commit: e78e61fec29176339019e079c82fb921b6d7412e
+
+## Controller: ghcr.io/datagarden-tech/csi-forca-controller:1.1.0
+Archive SHA-256: b5a76d3930b5da9be3643893c24fd848d76de485bd78f9e27a9bd47e4dbeae2f
+All severities: CRITICAL 0, HIGH 0, MEDIUM 15, LOW 8
+
+
+Report Summary
+
+┌───────────────────────────────────────────────────────────┬──────────┬─────────────────┐
+│                          Target                           │   Type   │ Vulnerabilities │
+├───────────────────────────────────────────────────────────┼──────────┼─────────────────┤
+│ /tmp/csi-forca-controller-1.1.0-e78e61f.tar (debian 13.7) │  debian  │        0        │
+├───────────────────────────────────────────────────────────┼──────────┼─────────────────┤
+│ usr/bin/csi-forca-controller                              │ gobinary │        0        │
+└───────────────────────────────────────────────────────────┴──────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+
+## Node: ghcr.io/datagarden-tech/csi-forca-node:1.1.0
+Archive SHA-256: 5c9d3f6f0e80afba812f52f99c480b4b7d373c902ab4365d71e8263792a1e4b4
+All severities: CRITICAL 0, HIGH 0, MEDIUM 15, LOW 8
+
+
+Report Summary
+
+┌─────────────────────────────────────────────────────┬──────────┬─────────────────┐
+│                       Target                        │   Type   │ Vulnerabilities │
+├─────────────────────────────────────────────────────┼──────────┼─────────────────┤
+│ /tmp/csi-forca-node-1.1.0-e78e61f.tar (debian 13.7) │  debian  │        0        │
+├─────────────────────────────────────────────────────┼──────────┼─────────────────┤
+│ usr/bin/csi-forca-node                              │ gobinary │        0        │
+└─────────────────────────────────────────────────────┴──────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)

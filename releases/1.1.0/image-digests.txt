@@ -1,0 +1,2 @@
+controller  sha256:c756bae9da0f0180d076525260087dbeb7f5817d0d76521e2884b51e217fd3b3  ghcr.io/datagarden-tech/csi-forca-controller:1.1.0
+node        sha256:402fdafcc1b90fe03316fd971e5d8397496137c631983068205555351533da64  ghcr.io/datagarden-tech/csi-forca-node:1.1.0
