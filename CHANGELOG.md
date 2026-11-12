@@ -6,6 +6,18 @@ This file records notable changes per release. Format: [Keep a Changelog](https:
 
 ## [Unreleased]
 
+## [1.1.1] — 2026-11-12
+
+### Fixed
+
+- Serialized final NVMe subsystem disconnect against concurrent unpublish on the same node,
+  so removing one volume cannot disconnect a sibling volume that is still in use.
+
+### Security
+
+- Updated `golang.org/x/net` to v0.62.0 and refreshed the Debian 13 distroless
+  runtime to address HIGH findings in the final image scan.
+
 ## [1.1.0] — 2026-10-24
 
 ### Added

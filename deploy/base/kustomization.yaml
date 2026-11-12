@@ -17,9 +17,9 @@ resources:
 # Image tag management (updated by CI or manual overlays)
 images:
   - name: ghcr.io/datagarden-tech/csi-forca-controller
-    newTag: 1.1.0
+    newTag: 1.1.1
   - name: ghcr.io/datagarden-tech/csi-forca-node
-    newTag: 1.1.0
+    newTag: 1.1.1
 
 # Labels applied to all resources (v5 transformer)
 # Product name: csi-forca (no "dg-" prefix per naming policy)
@@ -34,6 +34,6 @@ labels:
   # above; never a Kubernetes version. Excluded from selectors because workload
   # selectors are immutable and must stay stable across driver upgrades.
   - pairs:
-      app.kubernetes.io/version: "1.1.0"
+      app.kubernetes.io/version: "1.1.1"
     includeSelectors: false
     includeTemplates: true

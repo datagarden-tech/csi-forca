@@ -7,7 +7,7 @@
 
 * **Volume modes:** Filesystem (ext4, xfs) and Raw Block — RWO
 * **Attach model:** Skip-Attach (`CSIDriver.spec.attachRequired=false`)
-* **1.1.0 Kubernetes matrix:** 1.34 · 1.35 · 1.36; dependency-constrained per ADR-0018
+* **1.1.1 tested Kubernetes matrix:** 1.34 · 1.35 · 1.36; 1.34 is upstream EOL
 * **Transport:** NVMe/TCP by default; NVMe/RDMA is opt-in
 * **CSI spec:** 1.9+
 
@@ -27,7 +27,7 @@ kubectl -n csi-forca-system create secret generic vitiscale-credentials \
   --from-literal=password="YOUR_PASSWORD"
 
 # Apply the universal 1.1.x release bundle
-kubectl apply -f releases/1.1.0/deploy.yaml
+kubectl apply -f releases/1.1.1/deploy.yaml
 
 # Then apply a StorageClass (choose one)
 kubectl apply -f deploy/samples/storageclass-fs-rwo.yaml    # ext4 filesystem
@@ -65,13 +65,13 @@ The versioned bundle is the install source after publication. The public
 validation summary identifies the exact tested images and supported scope.
 
 ```bash
-VERSION=1.1.0
+VERSION=1.1.1
 kubectl apply -f releases/${VERSION}/deploy.yaml
 ```
 
-The default policy selects the latest three upstream-supported Kubernetes minors. For 1.1.0,
-the project-supported matrix is 1.34–1.36 because the hardware test environment uses Calico
-3.32, whose active Kubernetes test matrix stops at 1.36. Kubernetes 1.37 is deferred. Exact
+The default policy selects the latest three upstream-supported Kubernetes minors. This 1.1.1
+patch retains the 1.1.0 project test matrix of 1.34–1.36 for the release; 1.34 reached
+upstream end of life on 2026-10-27. Kubernetes 1.37 is outside the tested matrix. Exact
 patch versions, upstream lifecycle status, and test depth are published in the release
 `VALIDATION.md`. Kubernetes 1.28–1.31 were validated for 1.0.x and are now legacy/best-effort;
 their original versioned bundles remain in the corresponding immutable 1.0.x release directory.
@@ -132,10 +132,7 @@ releases/<version>/
 ├── scan-report.txt           Vulnerability scan report — human-readable (Trivy)
 ├── scan-report.json          Vulnerability scan report — machine-readable JSON (Trivy)
 ├── cosign.pub                Public key for Cosign signature verification
-├── VALIDATION.md             Validation summary — tested capabilities, scope, known limitations
-└── signatures/               Offline signature bundles (may be empty; signatures are in the OCI registry)
-    ├── csi-forca-controller.sig
-    └── csi-forca-node.sig
+└── VALIDATION.md             Validation summary — tested capabilities, scope, known limitations
 ```
 
 Each release directory includes a validation summary describing what was tested, scope, and known limitations for that release.
@@ -143,7 +140,7 @@ Each release directory includes a validation summary describing what was tested,
 **Verify a container image signature:**
 
 ```bash
-VERSION=1.1.0
+VERSION=1.1.1
 cosign verify \
   --key releases/${VERSION}/cosign.pub \
   ghcr.io/datagarden-tech/csi-forca-controller@<digest>
