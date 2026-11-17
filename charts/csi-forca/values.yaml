@@ -1,0 +1,37 @@
+# Chart 0.1.0 deploys the published csi-forca 1.1.1 images.
+images:
+  csi-forca-controller: ghcr.io/datagarden-tech/csi-forca-controller:1.1.1
+  csi-forca-node: ghcr.io/datagarden-tech/csi-forca-node:1.1.1
+  external-provisioner: registry.k8s.io/sig-storage/csi-provisioner:v5.2.0
+  node-driver-registrar: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.13.0
+  livenessprobe: registry.k8s.io/sig-storage/livenessprobe:v2.16.0
+  socket-dir-init: busybox:1.37
+
+# Create this Secret separately in the release namespace before installation.
+# Keys: endpoint and either api-token or username/password.
+existingSecret: vitiscale-credentials
+
+controller:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  nodeSelector: {}
+
+node:
+  # Select only Linux/amd64 nodes with access to the Vitiscale storage network.
+  nodeSelector: {}
+  tolerations:
+    - operator: Exists
+  nvmeRDMAIOQueues: "16"
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi

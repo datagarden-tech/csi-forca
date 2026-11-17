@@ -1,0 +1,84 @@
+{{- /*
+Render the exact production bundle maintained by Kustomize. The vendored copy
+in files/production.yaml is checked against dist/deploy.yaml in CI. The chart
+changes only Helm ownership labels, namespace, images and documented values.
+*/ -}}
+{{- $root := . -}}
+{{- $documents := splitList "\n---\n" (.Files.Get "files/production.yaml") -}}
+{{- range $document := $documents -}}
+{{- $object := fromYaml $document -}}
+{{- $kind := get $object "kind" -}}
+{{- if and $kind (ne $kind "Namespace") -}}
+{{- $metadata := get $object "metadata" -}}
+{{- $labels := get $metadata "labels" -}}
+{{- $_ := set $labels "app.kubernetes.io/managed-by" "Helm" -}}
+{{- $_ := set $labels "app.kubernetes.io/version" $root.Chart.AppVersion -}}
+{{- if not (has $kind (list "ClusterRole" "ClusterRoleBinding" "CSIDriver")) -}}
+{{- $_ := set $metadata "namespace" $root.Release.Namespace -}}
+{{- end -}}
+{{- if eq $kind "ClusterRoleBinding" -}}
+{{- range $subject := get $object "subjects" -}}
+{{- if eq (get $subject "kind") "ServiceAccount" -}}
+{{- $_ := set $subject "namespace" $root.Release.Namespace -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- $spec := get $object "spec" -}}
+{{- if has $kind (list "Deployment" "DaemonSet" "PodDisruptionBudget") -}}
+{{- $selector := get $spec "selector" -}}
+{{- $_ := set (get $selector "matchLabels") "app.kubernetes.io/managed-by" "Helm" -}}
+{{- end -}}
+{{- if eq $kind "Service" -}}
+{{- $_ := set (get $spec "selector") "app.kubernetes.io/managed-by" "Helm" -}}
+{{- end -}}
+{{- if has $kind (list "Deployment" "DaemonSet") -}}
+{{- $template := get $spec "template" -}}
+{{- $podLabels := get (get $template "metadata") "labels" -}}
+{{- $_ := set $podLabels "app.kubernetes.io/managed-by" "Helm" -}}
+{{- $_ := set $podLabels "app.kubernetes.io/version" $root.Chart.AppVersion -}}
+{{- $pod := get $template "spec" -}}
+{{- range $container := get $pod "containers" -}}
+{{- $name := get $container "name" -}}
+{{- $_ := set $container "image" (required (printf "images.%s is required" $name) (index $root.Values.images $name)) -}}
+{{- if eq $name "csi-forca-controller" -}}
+{{- $_ := set $container "resources" $root.Values.controller.resources -}}
+{{- range $env := get $container "env" -}}
+{{- $valueFrom := get $env "valueFrom" -}}
+{{- if $valueFrom -}}
+{{- $secretRef := get $valueFrom "secretKeyRef" -}}
+{{- if $secretRef -}}
+{{- $_ := set $secretRef "name" (required "existingSecret is required" $root.Values.existingSecret) -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- else if eq $name "csi-forca-node" -}}
+{{- $_ := set $container "resources" $root.Values.node.resources -}}
+{{- range $env := get $container "env" -}}
+{{- if eq (get $env "name") "NVME_RDMA_IO_QUEUES" -}}
+{{- $_ := set $env "value" (toString $root.Values.node.nvmeRDMAIOQueues) -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- with (get $pod "initContainers") -}}
+{{- range $container := . -}}
+{{- $name := get $container "name" -}}
+{{- $_ := set $container "image" (required (printf "images.%s is required" $name) (index $root.Values.images $name)) -}}
+{{- end -}}
+{{- end -}}
+{{- if eq $kind "Deployment" -}}
+{{- $_ := set $spec "replicas" (int $root.Values.controller.replicas) -}}
+{{- if $root.Values.controller.nodeSelector -}}
+{{- $_ := set $pod "nodeSelector" $root.Values.controller.nodeSelector -}}
+{{- end -}}
+{{- else -}}
+{{- if $root.Values.node.nodeSelector -}}
+{{- $_ := set $pod "nodeSelector" $root.Values.node.nodeSelector -}}
+{{- end -}}
+{{- $_ := set $pod "tolerations" $root.Values.node.tolerations -}}
+{{- end -}}
+{{- end -}}
+---
+{{ toYaml $object }}
+{{ end }}
+{{ end }}

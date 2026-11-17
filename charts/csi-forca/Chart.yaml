@@ -1,0 +1,9 @@
+apiVersion: v2
+name: csi-forca
+description: CSI driver for Datagarden Vitiscale block storage
+type: application
+version: 0.1.0
+appVersion: "1.1.1"
+home: https://github.com/datagarden-tech/csi-forca
+sources:
+  - https://github.com/datagarden-tech/csi-forca

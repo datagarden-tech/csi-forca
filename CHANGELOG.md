@@ -6,6 +6,12 @@ This file records notable changes per release. Format: [Keep a Changelog](https:
 
 ## [Unreleased]
 
+### Added
+
+- Added Helm chart 0.1.0 as an installation option for the published 1.1.1
+  driver images. The chart uses the same production resource definitions as
+  the versioned manifest bundle.
+
 ## [1.1.1] — 2026-11-12
 
 ### Fixed

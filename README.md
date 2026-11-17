@@ -95,6 +95,18 @@ kubectl apply -k deploy/overlays/vitiscale
 Base manifests are in `deploy/base/`. A version-specific overlay is created only when Kubernetes
 API or runtime behavior actually differs across the selected support matrix.
 
+### Option D — Helm chart
+
+The chart in `charts/csi-forca/` has its own version (`0.1.0`) and deploys the
+published driver images `1.1.1`. Create the `csi-forca-system` namespace and
+`vitiscale-credentials` Secret first, then install from a checkout:
+
+```bash
+helm install csi-forca ./charts/csi-forca --namespace csi-forca-system --wait
+```
+
+See the [chart README](charts/csi-forca/README.md) for prerequisites and values.
+
 ### StorageClass samples
 
 Sample StorageClass definitions are in `deploy/samples/`:
@@ -104,7 +116,7 @@ Sample StorageClass definitions are in `deploy/samples/`:
 
 The driver requires a `vitiscale-credentials` Secret in the `csi-forca-system` namespace with the
 Vitiscale REST API endpoint and authentication credentials. Create it before applying a release
-bundle or a Kubernetes-version overlay. The `endpoint` value is the base URL; do not append `/api`,
+bundle, Kustomize overlay, or Helm chart. The `endpoint` value is the base URL; do not append `/api`,
 because the driver adds API paths such as `/api/auth/login`:
 
 ```bash

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["images", "existingSecret", "controller", "node"],
+  "properties": {
+    "images": {
+      "type": "object",
+      "required": [
+        "csi-forca-controller",
+        "csi-forca-node",
+        "external-provisioner",
+        "node-driver-registrar",
+        "livenessprobe",
+        "socket-dir-init"
+      ],
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "existingSecret": { "type": "string", "minLength": 1 },
+    "controller": {
+      "type": "object",
+      "required": ["replicas", "resources"],
+      "properties": {
+        "replicas": { "type": "integer", "minimum": 1 },
+        "resources": { "type": "object" },
+        "nodeSelector": { "type": "object" }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": ["resources", "tolerations", "nvmeRDMAIOQueues"],
+      "properties": {
+        "resources": { "type": "object" },
+        "nodeSelector": { "type": "object" },
+        "tolerations": { "type": "array" },
+        "nvmeRDMAIOQueues": { "type": "string", "pattern": "^[1-9][0-9]*$" }
+      }
+    }
+  }
+}
